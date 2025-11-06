@@ -1,0 +1,13 @@
+{
+  "name": "hangman2",
+  "version": "1.0.0",
+  "description": "Refactored hangman using HangmanGame class",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

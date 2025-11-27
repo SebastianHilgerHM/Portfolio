@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman - Wörter eingeben</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="ascii-shell" role="main">
+      <pre class="ascii-boundary" aria-hidden="true">+----------------------------------------------+</pre>
+      <div class="ascii-panel" aria-label="Wörterverwaltung">
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content ascii-row__content--center">
+            <h1>Wörter eingeben</h1>
+            <p>Maximale Wortlänge: 12 Zeichen. Mindestens ein Wort ist erforderlich.</p>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content">
+            <form id="word-form">
+              <label for="word-count">Anzahl der Wörter</label>
+              <input type="number" id="word-count" min="1" max="20" value="3" />
+              <div id="word-inputs"></div>
+              <button type="submit">Spiel starten</button>
+            </form>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content">
+            <p id="result" role="status"></p>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content">
+            <button id="back">Zurück zur Startseite</button>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+      </div>
+      <pre class="ascii-boundary" aria-hidden="true">+----------------------------------------------+</pre>
+    </main>
+    <script>
+      const inputsContainer = document.getElementById('word-inputs');
+      const countInput = document.getElementById('word-count');
+      const form = document.getElementById('word-form');
+      const resultEl = document.getElementById('result');
+      const backButton = document.getElementById('back');
+
+      const renderInputs = (count) => {
+        inputsContainer.innerHTML = '';
+        for (let i = 0; i < count; i += 1) {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'word-input';
+          const label = document.createElement('label');
+          label.textContent = `Wort ${i + 1}`;
+          label.setAttribute('for', `word-${i}`);
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.id = `word-${i}`;
+          input.maxLength = 30;
+          input.required = true;
+          wrapper.appendChild(label);
+          wrapper.appendChild(input);
+          inputsContainer.appendChild(wrapper);
+        }
+      };
+
+      countInput.addEventListener('change', () => {
+        const count = Math.max(1, Math.min(20, Number(countInput.value)));
+        countInput.value = count;
+        renderInputs(count);
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        resultEl.textContent = 'Wörter werden übertragen...';
+        const words = Array.from(inputsContainer.querySelectorAll('input')).map((input) => input.value.trim());
+        if (words.filter(Boolean).length === 0) {
+          resultEl.textContent = 'Bitte gib mindestens ein Wort ein.';
+          return;
+        }
+
+        try {
+          const wordsResponse = await fetch('/api/words', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ words }),
+          });
+          const wordsData = await wordsResponse.json();
+          if (!wordsResponse.ok || wordsData.accepted.length === 0) {
+            resultEl.textContent =
+              wordsData.message || 'Keine gültigen Wörter gefunden. Bitte überprüfe deine Eingaben.';
+            return;
+          }
+
+          const startResponse = await fetch('/api/game/start', { method: 'POST' });
+          if (!startResponse.ok) {
+            const startData = await startResponse.json();
+            throw new Error(startData.message || 'Spiel konnte nicht gestartet werden.');
+          }
+
+          window.location.href = '/game.html';
+        } catch (error) {
+          resultEl.textContent = error.message;
+        }
+      });
+
+      backButton.addEventListener('click', () => {
+        window.location.href = '/index.html';
+      });
+
+      renderInputs(Number(countInput.value));
+    </script>
+  </body>
+</html>

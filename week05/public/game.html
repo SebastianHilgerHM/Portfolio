@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman - Spiel</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="ascii-shell" role="main">
+      <pre class="ascii-boundary" aria-hidden="true">+----------------------------------------------+</pre>
+      <div class="ascii-panel" aria-label="Spielrunde">
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content ascii-row__content--center">
+            <h1>Spielrunde</h1>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content">
+            <pre id="gallows" class="ascii-gallows" aria-hidden="true"></pre>
+            <div id="word" class="hidden-word"></div>
+            <p>Versuche übrig: <span id="tries">-</span></p>
+            <p>Geratene Buchstaben: <span id="guessed">-</span></p>
+            <p>Restliche Wörter: <span id="remaining">-</span></p>
+            <p id="status" class="status"></p>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content">
+            <form id="guess-form">
+              <label for="letter">Buchstabe eingeben</label>
+              <input id="letter" maxlength="1" autocomplete="off" required />
+              <button type="submit">Buchstabe raten</button>
+            </form>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content ascii-row__content--center">
+            <button id="next" style="display: none">Nächste Runde</button>
+            <button id="end" class="link-button">Zurück zur Übersicht</button>
+            <p id="message" role="status"></p>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+      </div>
+      <pre class="ascii-boundary" aria-hidden="true">+----------------------------------------------+</pre>
+    </main>
+    <script>
+      const wordEl = document.getElementById('word');
+      const triesEl = document.getElementById('tries');
+      const guessedEl = document.getElementById('guessed');
+      const statusEl = document.getElementById('status');
+      const remainingEl = document.getElementById('remaining');
+      const guessForm = document.getElementById('guess-form');
+      const nextButton = document.getElementById('next');
+      const endButton = document.getElementById('end');
+      const messageEl = document.getElementById('message');
+      const letterInput = document.getElementById('letter');
+      const gallowsEl = document.getElementById('gallows');
+
+      const MAX_TRIES = 11;
+
+      const padRow = (text = '') => text.padEnd(10, ' ');
+
+      const buildGallowsFrame = (mistakes) => {
+        const lines = Array(8).fill(padRow());
+
+        if (mistakes >= 1) {
+          lines[7] = '========';
+        }
+
+        if (mistakes >= 2) {
+          for (let i = 0; i <= 6; i += 1) {
+            lines[i] = padRow('  |');
+          }
+        }
+
+        if (mistakes >= 3) {
+          lines[0] = padRow('  +----+');
+        }
+
+        if (mistakes >= 4) {
+          lines[1] = padRow('  |    |');
+        }
+
+        if (mistakes >= 5) {
+          lines[2] = padRow('  |    |');
+        }
+
+        if (mistakes >= 6) {
+          lines[2] = padRow('  |    O');
+        }
+
+        if (mistakes >= 9) {
+          lines[3] = padRow('  |   /|\\');
+        }
+
+        if (mistakes >= 8) {
+          lines[4] = padRow('  |   / ');
+        }
+
+        if (mistakes >= 9) {
+          lines[4] = padRow('  |   / \\');
+        }
+
+        if (mistakes >= 10) {
+          lines[4] = padRow('  |   / ');
+        }
+
+        if (mistakes >= 11) {
+          lines[4] = padRow('  |   / \\');
+        }
+
+        return lines.join('\n');
+      };
+
+      const renderGallows = (triesLeft) => {
+        if (!gallowsEl) {
+          return;
+        }
+        const normalizedTries = typeof triesLeft === 'number' ? triesLeft : MAX_TRIES;
+        const mistakes = Math.max(0, Math.min(MAX_TRIES - normalizedTries, MAX_TRIES));
+        gallowsEl.textContent = buildGallowsFrame(mistakes);
+      };
+
+      const renderState = (state) => {
+        renderGallows(state ? state.triesLeft : MAX_TRIES);
+        if (!state) {
+          messageEl.textContent = 'Kein aktives Spiel.';
+          return;
+        }
+
+        if (state.status === 'finished') {
+          window.location.href = '/end.html';
+          return;
+        }
+
+        wordEl.innerHTML = state.hiddenWord.map((char) => `<span>${char}</span>`).join('');
+        triesEl.textContent = state.triesLeft;
+        remainingEl.textContent = state.remainingWords;
+        guessedEl.textContent = state.guessedLetters.length ? state.guessedLetters.join(', ') : '-';
+        statusEl.textContent = state.status === 'running' ? 'Spiel läuft' : `Status: ${state.status}`;
+        statusEl.className = `status ${state.status}`;
+
+        const showNext = state.status === 'won';
+        guessForm.style.display = state.status === 'running' ? 'block' : 'none';
+        nextButton.style.display = showNext ? 'block' : 'none';
+      };
+
+      const fetchState = async () => {
+        const response = await fetch('/api/game/state');
+        const data = await response.json();
+        renderState(data.state);
+      };
+
+      guessForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        messageEl.textContent = '';
+        const letter = letterInput.value.trim().toLowerCase();
+        if (!letter) {
+          return;
+        }
+        letterInput.value = '';
+        try {
+          const response = await fetch('/api/game/guess', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ letter }),
+          });
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.message || 'Eingabe nicht akzeptiert.');
+          }
+          renderState(data.state);
+        } catch (error) {
+          messageEl.textContent = error.message;
+        }
+      });
+
+      nextButton.addEventListener('click', async () => {
+        messageEl.textContent = '';
+        try {
+          const response = await fetch('/api/game/next', { method: 'POST' });
+          const data = await response.json();
+          if (data.done) {
+            window.location.href = '/end.html';
+            return;
+          }
+          if (!response.ok) {
+            throw new Error(data.message || 'Nächste Runde nicht möglich.');
+          }
+          renderState(data.state);
+          guessForm.style.display = 'block';
+          nextButton.style.display = 'none';
+        } catch (error) {
+          messageEl.textContent = error.message;
+        }
+      });
+
+      endButton.addEventListener('click', () => {
+        window.location.href = '/index.html';
+      });
+
+      renderGallows(MAX_TRIES);
+      fetchState();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman - Ende</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="ascii-shell" role="main">
+      <pre class="ascii-boundary" aria-hidden="true">+----------------------------------------------+</pre>
+      <div class="ascii-panel" aria-label="Spiel beendet">
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content ascii-row__content--center">
+            <h1>Keine Wörter mehr übrig</h1>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content ascii-row__content--center">
+            <p>Du hast alle eingetragenen Wörter gespielt. Starte ein neues Spiel, um weiterzuspielen.</p>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+        <div class="ascii-row">
+          <span class="ascii-rail" aria-hidden="true">|</span>
+          <div class="ascii-row__content ascii-row__content--center">
+            <button id="restart">Neues Spiel starten</button>
+          </div>
+          <span class="ascii-rail" aria-hidden="true">|</span>
+        </div>
+      </div>
+      <pre class="ascii-boundary" aria-hidden="true">+----------------------------------------------+</pre>
+    </main>
+    <script>
+      document.getElementById('restart').addEventListener('click', () => {
+        window.location.href = '/index.html';
+      });
+    </script>
+  </body>
+</html>

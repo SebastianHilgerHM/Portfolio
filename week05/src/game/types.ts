@@ -1,3 +1,4 @@
+// @author Sebastian Hilger
 export type Word = string;
 export type HiddenWord = string[];
 

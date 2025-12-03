@@ -1,3 +1,4 @@
+// @author Sebastian Hilger
 import { GameState, PublicGameState, Word } from './types';
 import { createHiddenWord, filterLongWords, MAX_TRIES, normalizeWords, sanitizeLetter } from './utils';
 

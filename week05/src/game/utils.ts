@@ -1,3 +1,4 @@
+// @author Sebastian Hilger
 import { HiddenWord, Word } from './types';
 
 export const MAX_WORD_LENGTH = 12;

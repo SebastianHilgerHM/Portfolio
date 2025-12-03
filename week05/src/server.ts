@@ -1,3 +1,4 @@
+// @author Sebastian Hilger
 import path from 'path';
 import express from 'express';
 import apiRouter from './routes/api';

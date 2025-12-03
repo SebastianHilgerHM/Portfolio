@@ -1,3 +1,4 @@
+// @author Sebastian Hilger
 import { Request, Response, Router } from 'express';
 import { HangmanGame } from '../game/HangmanGame';
 

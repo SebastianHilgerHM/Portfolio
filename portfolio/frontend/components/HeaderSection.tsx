@@ -1,0 +1,116 @@
+// Author: Sebastian Hilger
+// Course: ID3 / WS 2025/26
+// Assignment: P06 - Portfolio Website
+
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { colors, spacing, typography, zIndex, motion } from '@/lib/design-tokens';
+
+const HeaderSection = () => {
+  return (
+    <header
+      style={{
+        width: '100vw',
+        height: '64px',
+        backgroundColor: colors.primary,
+        position: 'sticky',
+        top: 0,
+        zIndex: zIndex.sticky,
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1200px',
+          height: '100%',
+          margin: '0 auto',
+          padding: `0 ${spacing.xs}px`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* BrandBlock */}
+        <Link
+          href="/"
+          aria-label="Home"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: `${spacing.xs}px`,
+            textDecoration: 'none',
+          }}
+        >
+          {/* LogoIcon */}
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={24}
+            height={24}
+            priority
+          />
+          
+          {/* BrandName */}
+          <span
+            style={{
+              fontFamily: typography.fontFamily.serif,
+              fontSize: typography.fontSize.h3,
+              fontWeight: typography.fontWeight.semibold,
+              color: colors.text_primary,
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+            }}
+          >
+            SEBASTIAN HILGER
+          </span>
+        </Link>
+
+        {/* NavigationBlock */}
+        <nav
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: `${spacing.medium}px`,
+          }}
+          className="navigation-block"
+        >
+          {['About Me', 'Contact', 'Resume', 'Projects'].map((item) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase().replace(' ', '-')}`}
+              style={{
+                fontFamily: typography.fontFamily.mono,
+                fontSize: typography.fontSize.body,
+                fontWeight: typography.fontWeight.medium,
+                color: colors.text_primary,
+                letterSpacing: '0.03em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                transition: `color ${motion.duration.fast}`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = colors.accent;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = colors.text_primary;
+              }}
+            >
+              {item}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .navigation-block {
+            display: none !important;
+          }
+        }
+      `}</style>
+    </header>
+  );
+};
+
+export default HeaderSection;

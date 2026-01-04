@@ -1,0 +1,23 @@
+/* Author: Sebastian Hilger */
+/* Course: ID3 / WS 2025/26 */
+/* Assignment: P06 - Portfolio Website */
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxygen', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', serif;
+}

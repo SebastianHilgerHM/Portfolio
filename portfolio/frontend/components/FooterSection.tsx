@@ -11,7 +11,7 @@ const FooterSection = () => {
   return (
     <footer
       style={{
-        width: '100vw',
+        width: '100%',
         height: '146px',
         backgroundColor: colors.primary,
       }}

@@ -54,8 +54,7 @@ const WorksSection = ({ projects }: WorksSectionProps) => {
   return (
     <section
       style={{
-        width: '100vw',
-        backgroundColor: colors.background,
+        width: '100%',
         paddingTop: `${spacing.xxl}px`,
         paddingBottom: `${spacing.xxl}px`,
         position: 'relative',

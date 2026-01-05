@@ -11,15 +11,25 @@ import { colors, spacing } from '@/lib/design-tokens';
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: colors.background, minHeight: '100vh' }}>
+    <main 
+      style={{ 
+        backgroundColor: colors.background, 
+        minHeight: '100vh',
+        backgroundImage: 'url(/svg/background_vector.svg)',
+        backgroundRepeat: 'repeat',
+        backgroundSize: '1145px 1062px',
+        backgroundPosition: '0 0',
+        overflowX: 'hidden',
+        width: '100%',
+      }}
+    >
       <HeaderSection />
       
       {/* Hero Section Placeholder */}
       <div
         style={{
-          width: '100vw',
+          width: '100%',
           minHeight: '60vh',
-          backgroundColor: colors.primary,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

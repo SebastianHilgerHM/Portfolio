@@ -13,7 +13,7 @@ const HeaderSection = () => {
     <header
       style={{
         width: '100%',
-        height: '64px',
+        height: '40px',
         backgroundColor: colors.primary,
         position: 'sticky',
         top: 0,
@@ -25,7 +25,7 @@ const HeaderSection = () => {
           maxWidth: '1200px',
           height: '100%',
           margin: '0 auto',
-          padding: `0 ${spacing.xs}px`,
+          padding: `0 ${spacing.xs / 2}px`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -49,6 +49,9 @@ const HeaderSection = () => {
             width={24}
             height={24}
             priority
+            style={{
+              marginBottom: '2px',
+            }}
           />
           
           {/* BrandName */}
@@ -60,6 +63,7 @@ const HeaderSection = () => {
               color: colors.text_primary,
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
+              lineHeight: 1,
             }}
           >
             SEBASTIAN HILGER

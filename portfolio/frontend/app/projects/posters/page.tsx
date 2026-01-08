@@ -62,7 +62,6 @@ export default function PostersProject() {
             style={{
               display: 'flex',
               gap: `${spacing.small}px`,
-              animation: 'scroll 30s linear infinite',
             }}
           >
             {/* Duplicate the posters for seamless loop */}
@@ -118,24 +117,11 @@ export default function PostersProject() {
         </div>
 
         <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-
-          .scrolling-posters {
-            will-change: transform;
-          }
-
           @media (max-width: 1024px) {
             .poster-grid-bottom {
               grid-template-columns: repeat(2, 1fr) !important;
             }
-            .scrolling-posters > div > div {
+            :global(.scrolling-posters) > div > div {
               width: 180px !important;
             }
           }
@@ -143,7 +129,7 @@ export default function PostersProject() {
             .poster-grid-bottom {
               grid-template-columns: 1fr !important;
             }
-            .scrolling-posters > div > div {
+            :global(.scrolling-posters) > div > div {
               width: 150px !important;
             }
           }

@@ -269,13 +269,12 @@ export default function CatanProject() {
           }}
         >
           <div
-            className="scrolling-images"
-            style={{
-              display: 'flex',
-              gap: `${spacing.medium}px`,
-              animation: 'scroll 30s linear infinite',
-            }}
-          >
+          className="scrolling-images"
+          style={{
+            display: 'flex',
+            gap: `${spacing.medium}px`,
+          }}
+        >
             {/* Duplicate the images for seamless loop */}
             {[...Array(2)].map((_, groupIndex) => (
               <div
@@ -313,21 +312,8 @@ export default function CatanProject() {
         </div>
 
         <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-
-          .scrolling-images {
-            will-change: transform;
-          }
-
           @media (max-width: 768px) {
-            .scrolling-images > div > div {
+            :global(.scrolling-images) > div > div {
               width: 200px !important;
               height: 200px !important;
             }

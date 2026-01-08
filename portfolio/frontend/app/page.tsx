@@ -14,24 +14,24 @@ export default function Home() {
   const projects = [
     {
       id: '1',
-      title: 'Project Alpha',
-      description: 'A comprehensive web application built with modern technologies.',
+      title: 'D&D Chatbot',
+      description: 'In a Team composed of four people, we created a interactive D&D Chatbot as part of a University Project',
       imageUrl: '/images/sample_chatbot.png',
-      link: '/projects/alpha',
+      link: '/projects/chatbot',
     },
     {
       id: '2',
-      title: 'Project Beta',
-      description: 'An innovative solution for digital collaboration and productivity.',
+      title: 'Album Covers',
+      description: 'A small Set of Vinyl Album Covers designed, as part of a personal project',
       imageUrl: '/images/sample_cover.png',
-      link: '/projects/beta',
+      link: '/projects/covers',
     },
     {
       id: '3',
-      title: 'Project Gamma',
-      description: 'Mobile-first design approach with stunning user experience.',
+      title: 'Poster Series',
+      description: 'A Series of Posters designed as part of a University Assignment, showing various design concepts',
       imageUrl: '/images/sample_poster.png',
-      link: '/projects/gamma',
+      link: '/projects/posters',
     },
   ];
 

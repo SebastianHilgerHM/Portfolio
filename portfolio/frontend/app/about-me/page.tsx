@@ -14,33 +14,33 @@ export default function AboutMe() {
   const interests = [
     {
       id: '1',
-      title: 'Design Systems',
-      description: 'Exploring the intersection of design and code, creating cohesive and scalable visual languages.',
+      title: 'Drawing & Graffiti',
+      description: 'I sketch constantly — whatever idea decides to show up. When I want something raw and expressive, I dive into tagging and graffiti-inspired pieces.',
     },
     {
       id: '2',
-      title: 'User Experience',
-      description: 'Understanding human behavior and psychology to craft intuitive digital experiences.',
+      title: 'Sewing & Clothes',
+      description: 'Customizing clothing and sewing pieces together lets me play with texture, shape, and personal expression in a totally different way.',
     },
     {
       id: '3',
-      title: 'Creative Technology',
-      description: 'Experimenting with emerging technologies to push the boundaries of what\'s possible.',
+      title: 'Coding',
+      description: 'I love experimenting with code, especially building small games and prototypes to see how ideas feel once they’re interactive.',
     },
     {
       id: '4',
-      title: 'Visual Storytelling',
-      description: 'Combining narrative and design to communicate ideas effectively and memorably.',
+      title: 'Dancing',
+      description: 'Dancing is how I reset my brain when I’ve been creating for too long.',
     },
     {
       id: '5',
-      title: 'Digital Innovation',
-      description: 'Staying at the forefront of web technologies and exploring new ways to enhance user engagement.',
+      title: 'Gaming',
+      description: 'A lot of my inspiration for world-building, storytelling, and interaction comes from the games I sink time into.',
     },
     {
       id: '6',
-      title: 'Collaborative Work',
-      description: 'Building meaningful connections and working with diverse teams to create exceptional results.',
+      title: 'Design',
+      description: 'Somewhere in the middle of all this is design — the place where everything blends together into the work I make.',
     },
   ];
 
@@ -88,7 +88,7 @@ export default function AboutMe() {
                 color: colors.text_primary,
               }}
             >
-              Get In Touch
+              Introduction
             </h3>
             <p
               style={{
@@ -97,7 +97,7 @@ export default function AboutMe() {
                 color: colors.text_secondary,
               }}
             >
-              I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out. I'll do my best to get back to you as soon as possible.
+              Hello, my name is Sebastian and I am a 21 year old Student from Munich, Germany, currently enrolled at Munich University of Applied Sciences for a degree in Computer Science and Design.
             </p>
           </Card>
         </div>
@@ -132,7 +132,7 @@ export default function AboutMe() {
                 color: colors.text_primary,
               }}
             >
-              Let's Connect
+              What Interests Me?
             </h3>
             <p
               style={{
@@ -141,7 +141,7 @@ export default function AboutMe() {
                 color: colors.text_secondary,
               }}
             >
-              I'm available for freelance work, collaborations, and conversations about design and technology. Here are some topics I'm particularly passionate about discussing.
+              I move between a bunch of creative interests that feed into each other and shape how I work.
             </p>
           </Card>
 

@@ -40,7 +40,7 @@ export default function CatanProject() {
           <p
             style={{
               fontSize: typography.fontSize.h3,
-              color: colors.text_secondary,
+              color: colors.text_primary,
               fontWeight: typography.fontWeight.regular,
             }}
           >
@@ -57,7 +57,7 @@ export default function CatanProject() {
           }}
         >
           <Image
-            src="/images/catan_3d.png"
+            src="/images/page_catan/0_withHUD.png"
             alt="Catan 3D Game Board"
             width={1200}
             height={675}
@@ -94,23 +94,33 @@ export default function CatanProject() {
             <p
               style={{
                 fontSize: typography.fontSize.body,
-                color: colors.text_primary,
+                color: colors.text_secondary,
                 lineHeight: typography.lineHeight.normal,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              As part of a university course, our team of four developed a 3D digital version of the board game Catan. The project combined gameplay programming, interface design, and 3D asset creation into a unified product. To keep development moving efficiently, we implemented large parts of the game logic early using temporary placeholder pieces. This made it possible to test core interactions, resource distribution, and turn mechanics in parallel while I worked on producing the finalized assets.
             </p>
           </Card>
 
           {/* Placeholder for additional content */}
           <div
             style={{
-              backgroundColor: colors.text_secondary,
-              opacity: 0.2,
+              position: 'relative',
               height: '400px',
               borderRadius: `${spacing.xs}px`,
+              overflow: 'hidden',
             }}
-          />
+          >
+            <Image
+              src="/images/page_catan/1_placeholder.png"
+              alt="Catan placeholder"
+              fill
+              style={{
+                objectFit: 'cover',
+                borderRadius: `${spacing.xs}px`,
+              }}
+            />
+          </div>
         </div>
 
         <style jsx>{`
@@ -149,7 +159,7 @@ export default function CatanProject() {
               }}
             >
               <Image
-                src="/images/catan_3d.png"
+                src="/images/page_catan/2_port.png"
                 alt="Catan detail 1"
                 fill
                 style={{
@@ -166,7 +176,7 @@ export default function CatanProject() {
               }}
             >
               <Image
-                src="/images/catan_3d.png"
+                src="/images/page_catan/3_wheat.png"
                 alt="Catan detail 2"
                 fill
                 style={{
@@ -188,47 +198,57 @@ export default function CatanProject() {
             className="text-cluster"
           >
             <Card padding="small" style={{ width: '70%' }}>
+              <h3
+                style={{
+                  fontSize: typography.fontSize.h3,
+                  fontWeight: typography.fontWeight.bold,
+                  color: colors.text_primary,
+                  marginBottom: `${spacing.xs}px`,
+                }}
+              >
+                Role & Workflow
+              </h3>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                My primary responsibility within the team was shaping the visual side of the project.
               </p>
             </Card>
             <Card padding="small" style={{ marginLeft: '40%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Returning to Blender after a long pause introduced some friction at the start, particularly when dealing with topology, shading, and consistency across different models.
               </p>
             </Card>
             <Card padding="small" style={{ marginRight: '30%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                Alongside the modeling itself, I coordinated with the programming side to ensure the asset formats and scales fit smoothly into the existing logic and Unity pipeline.
               </p>
             </Card>
             <Card padding="small" style={{ marginLeft: '35%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                This split workflow allowed the visuals and mechanics to evolve without blocking each other, creating a steady pace of iteration and refinement throughout the semester.
               </p>
             </Card>
           </div>
@@ -257,7 +277,7 @@ export default function CatanProject() {
             marginBottom: `${spacing.large}px`,
           }}
         >
-          Weekly Experiments
+          Visual Direction
         </h2>
 
         {/* Scrolling Images Container */}
@@ -285,9 +305,9 @@ export default function CatanProject() {
                   flexShrink: 0,
                 }}
               >
-                {[1, 2, 3, 4, 5].map((num) => (
+                {['center', 'clay', 'ore', 'sheep', 'water', 'wood'].map((name) => (
                   <div
-                    key={num}
+                    key={name}
                     style={{
                       position: 'relative',
                       width: '300px',
@@ -296,8 +316,8 @@ export default function CatanProject() {
                     }}
                   >
                     <Image
-                      src="/images/catan_3d.png"
-                      alt={`Experiment ${num}`}
+                      src={`/images/page_catan/a_${name}.png`}
+                      alt={`Catan ${name}`}
                       fill
                       style={{
                         objectFit: 'cover',
@@ -348,33 +368,33 @@ export default function CatanProject() {
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                The finished 3D models leaned toward stylized realism, aiming for clear visual readability without becoming overly detailed.
               </p>
             </Card>
             <Card padding="small" style={{ width: '50%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Ut enim ad minim veniam, quis nostrud exercitation.
+                The finished 3D models leaned toward stylized realism, aiming for clear visual readability without becoming overly detailed.
               </p>
             </Card>
             <Card padding="small" style={{ marginLeft: '25%', width: '70%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Subtle environmental lighting helped bind the scene together, giving the board a cohesive digital presence distinct from the physical tabletop version.
               </p>
             </Card>
           </div>
@@ -388,7 +408,7 @@ export default function CatanProject() {
             }}
           >
             <Image
-              src="/images/catan_3d.png"
+              src="/images/page_catan/4_road.png"
               alt="Catan 3D render"
               fill
               style={{
@@ -407,7 +427,7 @@ export default function CatanProject() {
           }}
         >
           <Image
-            src="/images/catan_3d.png"
+            src="/images/page_catan/5_withoutHUD.png"
             alt="Catan game board overview"
             width={1200}
             height={675}

@@ -40,7 +40,7 @@ export default function PostersProject() {
           <p
             style={{
               fontSize: typography.fontSize.h3,
-              color: colors.text_secondary,
+              color: colors.text_primary,
               fontWeight: typography.fontWeight.regular,
             }}
           >
@@ -74,18 +74,71 @@ export default function PostersProject() {
                   flexShrink: 0,
                 }}
               >
-                {[1, 2, 3, 4, 5].map((num) => (
+                {/* Final posters */}
+                {[1, 2, 3].map((num) => (
                   <div
-                    key={num}
+                    key={`final-${num}`}
                     style={{
-                      backgroundColor: colors.text_secondary,
-                      opacity: 0.2,
+                      position: 'relative',
                       width: '240px',
                       aspectRatio: '1/1.414',
-                      borderRadius: `${spacing.xs}px`,
                       flexShrink: 0,
+                      overflow: 'hidden',
+                      borderRadius: `${spacing.xs}px`,
+                    }}
+                  >
+                    <Image
+                      src={`/images/page_posters/${num - 1}_final_${num}.png`}
+                      alt={`Final Poster ${num}`}
+                      fill
+                      style={{
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </div>
+                ))}
+                {/* Proto poster */}
+                <div
+                  style={{
+                    position: 'relative',
+                    width: '240px',
+                    aspectRatio: '1/1.414',
+                    flexShrink: 0,
+                    overflow: 'hidden',
+                    borderRadius: `${spacing.xs}px`,
+                  }}
+                >
+                  <Image
+                    src="/images/page_posters/3_final_proto.png"
+                    alt="Final Proto Poster"
+                    fill
+                    style={{
+                      objectFit: 'cover',
                     }}
                   />
+                </div>
+                {/* Gallery posters */}
+                {['cubes', 'expansion', 'fish', 'initials', 'leaf', 'leaf_empty', 'leaf_full', 'mirror', 'movie', 'optical', 'pattern', 'pile', 'spiral', 'stripes', 'vase'].map((name) => (
+                  <div
+                    key={name}
+                    style={{
+                      position: 'relative',
+                      width: '240px',
+                      aspectRatio: '1/1.414',
+                      flexShrink: 0,
+                      overflow: 'hidden',
+                      borderRadius: `${spacing.xs}px`,
+                    }}
+                  >
+                    <Image
+                      src={`/images/page_posters/g_${name}.png`}
+                      alt={`Poster ${name}`}
+                      fill
+                      style={{
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </div>
                 ))}
               </div>
             ))}
@@ -106,13 +159,22 @@ export default function PostersProject() {
             <div
               key={num}
               style={{
-                backgroundColor: colors.text_secondary,
-                opacity: 0.2,
+                position: 'relative',
                 width: '100%',
                 aspectRatio: '1/1.414',
+                overflow: 'hidden',
                 borderRadius: `${spacing.xs}px`,
               }}
-            />
+            >
+              <Image
+                src={`/images/page_posters/${num - 1}_final_${num}.png`}
+                alt={`Featured Poster ${num}`}
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
           ))}
         </div>
 
@@ -152,11 +214,11 @@ export default function PostersProject() {
           <p
             style={{
               fontSize: typography.fontSize.body,
-              color: colors.text_primary,
+              color: colors.text_secondary,
               lineHeight: typography.lineHeight.normal,
             }}
           >
-            In our Typography & Design course, we were tasked with creating ten black and white poster designs in a weekly format. The goal of this course was to learn about the basic principles of contrast, composition, as well as visual hierarchy. Each week there would be a new topic and a new font of choice to apply these concepts. Alongside the task criteria of each week. The final project expanded this into a series of three posters meant to spotlight a form of "trash" in society, either in the abstract or literal sense.
+            In our Typography & Design course, we were tasked with creating ten black and white poster designs in a weekly format. The goal of this course was to learn about the basic principles of contrast, composition, as well as visual hierarchy. The goal was not to create good posters but instead try to achieve something coherent whilst meeting the task criteria of each week. The final project expanded this into a series of three posters meant to spotlight a form of “trash” in society, either in the abstract or literal sense.
           </p>
         </Card>
       </SectionContainer>
@@ -168,7 +230,8 @@ export default function PostersProject() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: `${spacing.large}px`,
-            alignItems: 'start',
+            alignItems: 'center',
+            justifyItems: 'center',
             marginBottom: `${spacing.xxl}px`,
           }}
           className="interpretation-layout"
@@ -180,61 +243,62 @@ export default function PostersProject() {
               flexDirection: 'column',
               gap: `${spacing.small}px`,
               position: 'relative',
+              alignItems: 'center',
             }}
             className="interpretation-text"
           >
-            <h2
-              style={{
-                fontSize: typography.fontSize.h2,
-                fontWeight: typography.fontWeight.bold,
-                color: colors.text_primary,
-                marginBottom: `${spacing.small}px`,
-              }}
-            >
-              My Interpretation
-            </h2>
             <Card padding="small" style={{ width: '70%' }}>
+              <h2
+                style={{
+                  fontSize: typography.fontSize.h3,
+                  fontWeight: typography.fontWeight.bold,
+                  color: colors.text_primary,
+                  marginBottom: `${spacing.small}px`,
+                }}
+              >
+                My Interpretation
+              </h2>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                My series tackles scam and phishing emails by visualizing them as spam; both as the canned meat product and as spam mail. I wanted to show the overwhelming number of mails. This was done to create a link to the feeling of someone stuck in an spam mail bombardment.
+                My series tackles scam and phishing emails by visualizing them as looming, water-related entities, often with the concept of "drowning" in the overwhelming number of mails. This was done to create a link to the topic of course before us, as their final series was connected to water.
               </p>
             </Card>
             <Card padding="small" style={{ marginLeft: '35%', width: '60%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Although it did not start with this focus, the first few designs steered me towards exploring the ever-growing involvement of AI in the generation on spam, and chatbot mails and the ever-growing sophistication of these things.
+                Although it did not start with this focus, the first few designs leaned much more heavily on the ever growing involvement of AI in the generation on spam- and phishing-mails and the ever growing threat they pose to internet traffic.
               </p>
             </Card>
             <Card padding="small" style={{ width: '75%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Another iteration was much more focused on asserting what specific sets by showcasing specific scam headlines which in the end this concept was later scrapped in favour of a more artistic approach.
+                Another iteration was much more focused on delivering actual specific data by showcasing numbers and putting them into perspective. This concept was later scrapped in favour of a more artistic approach.
               </p>
             </Card>
             <Card padding="small" style={{ marginLeft: '25%', width: '65%' }}>
               <p
                 style={{
                   fontSize: typography.fontSize.body,
-                  color: colors.text_primary,
+                  color: colors.text_secondary,
                   lineHeight: typography.lineHeight.normal,
                 }}
               >
-                Each poster uses shifting light–dark divides and cluttered typography to echo the feeling of being overwhelmed by these emails. From pixelated chaos into a cropping, almost total focus.
+                Each poster uses shifting light–dark divides and clustered typography to echo the feeling of being overwhelmed by digital junk, turning inbox pollution into a creeping, almost tidal force.
               </p>
             </Card>
           </div>
@@ -242,13 +306,22 @@ export default function PostersProject() {
           {/* Right Column - Image */}
           <div
             style={{
-              backgroundColor: colors.text_secondary,
-              opacity: 0.2,
+              position: 'relative',
               width: '100%',
               aspectRatio: '1/1.414',
+              overflow: 'hidden',
               borderRadius: `${spacing.xs}px`,
             }}
-          />
+          >
+            <Image
+              src="/images/page_posters/3_final_proto.png"
+              alt="Final Proto Poster"
+              fill
+              style={{
+                objectFit: 'cover',
+              }}
+            />
+          </div>
         </div>
 
         <style jsx>{`
@@ -278,8 +351,8 @@ export default function PostersProject() {
         </h2>
         <p
           style={{
-            fontSize: typography.fontSize.body,
-            color: colors.text_secondary,
+            fontSize: typography.fontSize.h4,
+            color: colors.text_primary,
             lineHeight: typography.lineHeight.normal,
             marginBottom: `${spacing.large}px`,
           }}
@@ -287,7 +360,7 @@ export default function PostersProject() {
           A collection of most of my Posters
         </p>
 
-        {/* Grid of 6 Posters */}
+        {/* Grid of All Gallery Posters */}
         <div
           style={{
             display: 'grid',
@@ -296,17 +369,26 @@ export default function PostersProject() {
           }}
           className="experiments-grid"
         >
-          {[1, 2, 3, 4, 5, 6].map((num) => (
+          {['cubes', 'expansion', 'fish', 'initials', 'leaf', 'leaf_empty', 'leaf_full', 'mirror', 'movie', 'optical', 'pattern', 'pile', 'spiral', 'stripes', 'vase'].map((name) => (
             <div
-              key={num}
+              key={name}
               style={{
-                backgroundColor: colors.text_secondary,
-                opacity: 0.2,
+                position: 'relative',
                 width: '100%',
                 aspectRatio: '1/1.414',
+                overflow: 'hidden',
                 borderRadius: `${spacing.xs}px`,
               }}
-            />
+            >
+              <Image
+                src={`/images/page_posters/g_${name}.png`}
+                alt={`Poster ${name}`}
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
           ))}
         </div>
 

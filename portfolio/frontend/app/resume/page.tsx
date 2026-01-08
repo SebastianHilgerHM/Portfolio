@@ -17,24 +17,24 @@ export default function ResumePage() {
       dateRange: 'Oct 2024 - Present',
       title: 'Munich University of Applied Sciences',
       description:
-        'Bachelor\'s in Interaction Design and Interactive Media. Focused on user-centered design, interactive technologies, and digital prototyping.',
+        'I started attending the Munich University of Applied Sciences in October 2024, after studying Computer Science at LMU for two Semesters. When I applied for Computer Science and Design at MUC.DAI, I didn\'t yet know how much I would enjoy the design aspect of the degree.',
       image: '/images/university_placeholder.png',
     },
     {
-      dateRange: 'Sep 2019 - Jul 2023',
+      dateRange: 'Sep 2020 - Jul 2023',
       title: 'FOS Erding',
       description:
-        'Successfully completed technical high school focusing on technology, design, and applied sciences.',
+        'I attended FOS Erding before starting university, focusing on the technical branch. At the time, I wasn’t fully aware of how useful the practical orientation and project work would become later. Looking back, the mix of applied subjects and hands-on experience helped me build a solid foundation for my studies and confirmed my interest in the tech and design field.',
       image: '/images/school_placeholder.png',
     },
   ];
 
   const workEntries = [
     {
-      dateRange: 'Dec 2021 - Aug 2025',
-      title: 'Thorma Editing',
+      dateRange: 'Dec 2022 - Aug 2025',
+      title: 'Therme Erding - Cashier',
       description:
-        'Freelance video editor, working on various commercial, industrial, and social media projects.',
+        'I worked at Therme Erding as a cashier for about 2.5 years. Besides handling transactions at the register, I took care of various administrative and organizational tasks in the office. I was also involved in customer service away from the counter, helping guests with questions and requests throughout the facility.',
     },
   ];
 

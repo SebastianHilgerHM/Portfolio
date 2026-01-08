@@ -18,14 +18,14 @@ export default function ResumePage() {
       title: 'Munich University of Applied Sciences',
       description:
         'I started attending the Munich University of Applied Sciences in October 2024, after studying Computer Science at LMU for two Semesters. When I applied for Computer Science and Design at MUC.DAI, I didn\'t yet know how much I would enjoy the design aspect of the degree.',
-      image: '/images/university_placeholder.png',
+      image: '/images/resume/0_hm.jpg',
     },
     {
       dateRange: 'Sep 2020 - Jul 2023',
       title: 'FOS Erding',
       description:
         'I attended FOS Erding before starting university, focusing on the technical branch. At the time, I wasn’t fully aware of how useful the practical orientation and project work would become later. Looking back, the mix of applied subjects and hands-on experience helped me build a solid foundation for my studies and confirmed my interest in the tech and design field.',
-      image: '/images/school_placeholder.png',
+      image: '/images/resume/1_fos.jpeg',
     },
   ];
 

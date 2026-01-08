@@ -131,7 +131,7 @@ export default function Home() {
               }}
             >
               <a
-                href="#works"
+                href="/projects"
                 style={{
                   padding: `${spacing.small}px ${spacing.medium}px`,
                   backgroundColor: colors.accent,
@@ -183,7 +183,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Column - Visual Element */}
+          {/* Right Column - Skills Display */}
           <div
             style={{
               position: 'relative',
@@ -253,6 +253,72 @@ export default function Home() {
                 <div style={{ backgroundColor: colors.card, borderRadius: `${radius.base}px` }} />
                 <div style={{ backgroundColor: colors.accent, borderRadius: `${radius.base}px` }} />
               </div>
+
+              {/* Orbiting Skills */}
+              {[
+                { name: 'Figma', level: 5, angle: 0 },
+                { name: 'Python', level: 4, angle: 51 },
+                { name: 'CSS', level: 4, angle: 102 },
+                { name: 'HTML', level: 4, angle: 153 },
+                { name: 'Aseprite', level: 3, angle: 204 },
+                { name: 'JavaScript', level: 3, angle: 255 },
+                { name: 'Blender', level: 2, angle: 306 },
+              ].map((skill, index) => {
+                const radius = 52; // % from center
+                const angleRad = (skill.angle * Math.PI) / 180;
+                const x = 50 + radius * Math.cos(angleRad - Math.PI / 2);
+                const y = 50 + radius * Math.sin(angleRad - Math.PI / 2);
+                
+                return (
+                  <div
+                    key={skill.name}
+                    className="skill-orbit"
+                    style={{
+                      position: 'absolute',
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      transform: 'translate(-50%, -50%)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '4px',
+                      animationDelay: `${index * 0.1}s`,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: typography.fontSize.small,
+                        fontWeight: typography.fontWeight.bold,
+                        color: colors.text_primary,
+                        whiteSpace: 'nowrap',
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                      }}
+                    >
+                      {skill.name}
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: '3px',
+                      }}
+                    >
+                      {[1, 2, 3, 4, 5].map((dot) => (
+                        <div
+                          key={dot}
+                          style={{
+                            width: '6px',
+                            height: '6px',
+                            borderRadius: '50%',
+                            backgroundColor: dot <= skill.level ? colors.accent : colors.text_secondary,
+                            opacity: dot <= skill.level ? 1 : 0.2,
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -286,6 +352,22 @@ export default function Home() {
             animation: pulse 3s ease-in-out infinite;
           }
 
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translate(-50%, -40%);
+            }
+            to {
+              opacity: 1;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          .skill-orbit {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+          }
+
           @media (max-width: 1024px) {
             .hero-layout {
               grid-template-columns: 1fr !important;
@@ -303,12 +385,22 @@ export default function Home() {
             .hero-layout h1 {
               font-size: 42px !important;
             }
+            .skill-orbit {
+              font-size: 10px !important;
+            }
+            .skill-orbit > div:last-child {
+              gap: 2px !important;
+            }
+            .skill-orbit > div:last-child > div {
+              width: 4px !important;
+              height: 4px !important;
+            }
           }
         `}</style>
       </div>
 
       {/* Works Section */}
-      <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge" id="works">
+      <SectionContainer paddingTop="medium" paddingBottom="xxlarge" id="works">
         <SectionHeader>SOME OF MY WORKS</SectionHeader>
         <div
           style={{

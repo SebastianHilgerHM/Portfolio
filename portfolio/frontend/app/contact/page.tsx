@@ -15,8 +15,8 @@ export default function Contact() {
   const [showForm, setShowForm] = useState(false);
 
   const socials = [
-    { platform: 'Instagram', handle: '@', url: 'https://instagram.com' },
-    { platform: 'LinkedIn', handle: '@', url: 'https://linkedin.com' },
+    { platform: 'Instagram', handle: '@placeholder', url: 'https://instagram.com' },
+    { platform: 'LinkedIn', handle: '@placeholder', url: 'https://linkedin.com' },
   ];
 
   const emailAddress = 'contact@example.com';

@@ -72,7 +72,7 @@ export default function AboutMe() {
           className="introduction-grid"
         >
           <ImageBlock
-            src="/images/me_placeholder.png"
+            src="/images/me.jpg"
             alt="Portrait"
             maxWidth="420px"
             height="420px"

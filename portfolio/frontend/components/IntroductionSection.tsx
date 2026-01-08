@@ -18,7 +18,7 @@ interface IntroductionSectionProps {
 const IntroductionSection = ({ 
   title = "Introduction", 
   description = "I'm a passionate developer with a keen interest in creating intuitive and engaging web experiences. My work combines technical expertise with creative problem-solving to deliver solutions that make a difference.",
-  imageUrl = "/images/me_placeholder.png"
+  imageUrl = "/images/me.jpg"
 }: IntroductionSectionProps) => {
   return (
     <SectionContainer paddingTop="medium" paddingBottom="medium" className="introduction-section">

@@ -4,8 +4,10 @@
 
 'use client';
 
-import { useState } from 'react';
-import { colors, spacing, typography, radius, zIndex, shadows, motion } from '@/lib/design-tokens';
+import SectionContainer from './ui/SectionContainer';
+import Card from './ui/Card';
+import InterestCard from './ui/InterestCard';
+import { colors, spacing, typography } from '@/lib/design-tokens';
 
 // Interface for future backend integration
 export interface Interest {
@@ -49,109 +51,45 @@ const CuriositySection = ({
   ];
 
   const displayInterests = interests || defaultInterests;
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <section
-      style={{
-        width: '100%',
-        paddingTop: `${spacing.medium}px`,
-        paddingBottom: `${spacing.xxl}px`,
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-      className="curiosity-section"
-    >
+    <SectionContainer paddingTop="medium" paddingBottom="xxlarge" className="curiosity-section">
       <div
         style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          paddingLeft: `${spacing.medium}px`,
-          paddingRight: `${spacing.medium}px`,
-          position: 'relative',
-          zIndex: zIndex.base + 1,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: `${spacing.small}px`,
+          alignItems: 'stretch',
         }}
+        className="curiosity-grid"
       >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: `${spacing.small}px`,
-            alignItems: 'stretch',
-          }}
-          className="curiosity-grid"
-        >
-          {/* SectionIntroCard */}
-          <div
+        {/* Section Intro Card */}
+        <Card style={{ gridColumn: '1 / -1' }}>
+          <h3
             style={{
-              gridColumn: '1 / -1',
-              backgroundColor: colors.primary,
-              borderRadius: `${radius.base}px`,
-              padding: `${spacing.medium}px`,
-              boxShadow: shadows.card,
+              fontSize: typography.fontSize.h3,
+              fontWeight: typography.fontWeight.semibold,
+              marginBottom: `${spacing.small}px`,
+              color: colors.text_primary,
             }}
           >
-            <h3
-              style={{
-                fontSize: typography.fontSize.h3,
-                fontWeight: typography.fontWeight.semibold,
-                marginBottom: `${spacing.small}px`,
-                color: colors.text_primary,
-              }}
-            >
-              {introTitle}
-            </h3>
-            <p
-              style={{
-                fontSize: typography.fontSize.body,
-                lineHeight: typography.lineHeight.normal,
-                color: colors.text_secondary,
-              }}
-            >
-              {introDescription}
-            </p>
-          </div>
+            {introTitle}
+          </h3>
+          <p
+            style={{
+              fontSize: typography.fontSize.body,
+              lineHeight: typography.lineHeight.normal,
+              color: colors.text_secondary,
+            }}
+          >
+            {introDescription}
+          </p>
+        </Card>
 
-          {/* InterestCards */}
-          {displayInterests.map((interest) => (
-            <div
-              key={interest.id}
-              style={{
-                backgroundColor: colors.primary,
-                borderRadius: `${radius.base}px`,
-                padding: `${spacing.medium}px`,
-                boxShadow: hoveredCard === interest.id ? shadows.cardHover : shadows.card,
-                display: 'flex',
-                flexDirection: 'column',
-                transform: hoveredCard === interest.id ? 'translateY(-4px)' : 'translateY(0)',
-                transition: `all ${motion.duration.normal} ${motion.easing.standard}`,
-                cursor: 'default',
-              }}
-              onMouseEnter={() => setHoveredCard(interest.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <h3
-                style={{
-                  fontSize: typography.fontSize.h3,
-                  fontWeight: typography.fontWeight.semibold,
-                  marginBottom: `${spacing.small}px`,
-                  color: colors.text_primary,
-                }}
-              >
-                {interest.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  lineHeight: typography.lineHeight.normal,
-                  color: colors.text_secondary,
-                }}
-              >
-                {interest.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        {/* Interest Cards */}
+        {displayInterests.map((interest) => (
+          <InterestCard key={interest.id} {...interest} />
+        ))}
       </div>
 
       <style jsx>{`
@@ -172,7 +110,7 @@ const CuriositySection = ({
           }
         }
       `}</style>
-    </section>
+    </SectionContainer>
   );
 };
 

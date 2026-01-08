@@ -48,6 +48,7 @@ export const typography = {
     h1: "96px",
     h2: "60px",
     h3: "34px",
+    h4: "24px",
     body: "16px",
     body_small: "14px",
   },

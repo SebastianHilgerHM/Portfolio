@@ -4,8 +4,10 @@
 
 'use client';
 
-import Image from 'next/image';
-import { colors, spacing, typography, radius, zIndex } from '@/lib/design-tokens';
+import SectionContainer from './ui/SectionContainer';
+import ImageBlock from './ui/ImageBlock';
+import Card from './ui/Card';
+import { colors, spacing, typography } from '@/lib/design-tokens';
 
 interface IntroductionSectionProps {
   title?: string;
@@ -19,96 +21,47 @@ const IntroductionSection = ({
   imageUrl = "/images/me_placeholder.png"
 }: IntroductionSectionProps) => {
   return (
-    <section
-      style={{
-        width: '100%',
-        paddingTop: `${spacing.medium}px`,
-        paddingBottom: `${spacing.medium}px`,
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-      className="introduction-section"
-    >
+    <SectionContainer paddingTop="medium" paddingBottom="medium" className="introduction-section">
       <div
         style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          paddingLeft: `${spacing.medium}px`,
-          paddingRight: `${spacing.medium}px`,
-          position: 'relative',
-          zIndex: zIndex.base + 1,
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          columnGap: `${spacing.large}px`,
+          alignItems: 'center',
         }}
+        className="introduction-grid"
       >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            columnGap: `${spacing.large}px`,
-            alignItems: 'center',
-          }}
-          className="introduction-grid"
-        >
-          {/* IllustrationBlock */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <div
-              style={{
-                maxWidth: '420px',
-                width: '100%',
-                height: '420px',
-                position: 'relative',
-                borderRadius: `${radius.base}px`,
-                overflow: 'hidden',
-              }}
-            >
-              <Image
-                src={imageUrl}
-                alt="Portrait"
-                fill
-                style={{
-                  objectFit: 'cover',
-                  borderRadius: `${radius.base}px`,
-                }}
-              />
-            </div>
-          </div>
+        {/* Image Block */}
+        <ImageBlock
+          src={imageUrl}
+          alt="Portrait"
+          maxWidth="420px"
+          height="420px"
+          objectFit="cover"
+        />
 
-          {/* TextBlock */}
-          <div
+        {/* Text Block */}
+        <Card style={{ maxWidth: '480px' }} className="text-block">
+          <h3
             style={{
-              backgroundColor: colors.primary,
-              borderRadius: `${radius.base}px`,
-              padding: `${spacing.medium}px`,
-              maxWidth: '480px',
+              fontSize: typography.fontSize.h3,
+              fontWeight: typography.fontWeight.semibold,
+              marginBottom: `${spacing.small}px`,
+              color: colors.text_primary,
             }}
-            className="text-block"
           >
-            <h3
-              style={{
-                fontSize: typography.fontSize.h3,
-                fontWeight: typography.fontWeight.semibold,
-                marginBottom: `${spacing.small}px`,
-                color: colors.text_primary,
-              }}
-            >
-              {title}
-            </h3>
-            <p
-              style={{
-                fontSize: typography.fontSize.body,
-                lineHeight: typography.lineHeight.normal,
-                color: colors.text_secondary,
-              }}
-            >
-              {description}
-            </p>
-          </div>
-        </div>
+            {title}
+          </h3>
+          <p
+            style={{
+              fontSize: typography.fontSize.body,
+              lineHeight: typography.lineHeight.normal,
+              color: colors.text_secondary,
+            }}
+          >
+            {description}
+          </p>
+        </Card>
       </div>
 
       <style jsx>{`
@@ -130,7 +83,7 @@ const IntroductionSection = ({
           }
         }
       `}</style>
-    </section>
+    </SectionContainer>
   );
 };
 

@@ -1,6 +1,6 @@
 // Author: Sebastian Hilger
 // Course: ID3 / WS 2025/26
-// Assignment: P06 - Portfolio Website
+// Assignment: P07 - Portfolio Website
 
 'use client';
 
@@ -11,6 +11,7 @@ import Card from './ui/Card';
 import Button from './ui/Button';
 import ContactForm from './ui/ContactForm';
 import { colors, spacing, typography } from '@/lib/design-tokens';
+import { contactApi } from '@/lib/api';
 
 interface SocialLink {
   platform: string;
@@ -31,11 +32,36 @@ const ContactSection = ({
   emailAddress = 'contact@example.com',
 }: ContactSectionProps) => {
   const [showForm, setShowForm] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleFormSubmit = (data: { name: string; email: string; message: string }) => {
-    // Prepare for backend integration
-    console.log('Form submitted:', data);
-    setShowForm(false);
+  const handleFormSubmit = async (data: { name: string; email: string; message: string }) => {
+    setSubmitStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await contactApi.submit(data);
+
+      if (response.success) {
+        setSubmitStatus('success');
+        setTimeout(() => {
+          setShowForm(false);
+          setSubmitStatus('idle');
+        }, 2000);
+      } else {
+        setSubmitStatus('error');
+        // Show detailed validation errors if available
+        if (response.details && response.details.length > 0) {
+          setErrorMessage(response.details.join(', '));
+        } else {
+          setErrorMessage(response.error || 'Failed to send message');
+        }
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      setErrorMessage('Network error. Please try again.');
+    }
   };
 
   return (
@@ -134,11 +160,51 @@ const ContactSection = ({
                   Email Me
                 </Button>
               </>
+            ) : submitStatus === 'success' ? (
+              <div style={{ animation: 'fadeIn 0.3s ease-in' }}>
+                <p
+                  style={{
+                    fontSize: typography.fontSize.body,
+                    color: '#4CAF50',
+                    fontWeight: typography.fontWeight.medium,
+                  }}
+                >
+                  ✓ Message sent successfully!
+                </p>
+              </div>
             ) : (
-              <ContactForm
-                onSubmit={handleFormSubmit}
-                onCancel={() => setShowForm(false)}
-              />
+              <>
+                {submitStatus === 'error' && (
+                  <p
+                    style={{
+                      fontSize: typography.fontSize.small,
+                      color: '#f44336',
+                      marginBottom: `${spacing.xs}px`,
+                    }}
+                  >
+                    {errorMessage}
+                  </p>
+                )}
+                <ContactForm
+                  onSubmit={handleFormSubmit}
+                  onCancel={() => {
+                    setShowForm(false);
+                    setSubmitStatus('idle');
+                    setErrorMessage('');
+                  }}
+                />
+                {submitStatus === 'loading' && (
+                  <p
+                    style={{
+                      fontSize: typography.fontSize.small,
+                      color: colors.text_secondary,
+                      marginTop: `${spacing.xs}px`,
+                    }}
+                  >
+                    Sending...
+                  </p>
+                )}
+              </>
             )}
           </Card>
         </div>

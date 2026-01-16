@@ -22,7 +22,7 @@ interface ContactFormErrors {
 }
 
 interface ContactFormProps {
-  onSubmit?: (data: ContactFormData) => void;
+  onSubmit?: (data: ContactFormData) => void | Promise<void>;
   onCancel?: () => void;
 }
 
@@ -38,6 +38,8 @@ const ContactForm = ({ onSubmit, onCancel }: ContactFormProps) => {
     email: '',
     message: '',
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
     const newErrors: ContactFormErrors = {
@@ -64,12 +66,17 @@ const ContactForm = ({ onSubmit, onCancel }: ContactFormProps) => {
     return !newErrors.name && !newErrors.email && !newErrors.message;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateForm()) {
-      onSubmit?.(formData);
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({ name: '', email: '', message: '' });
+    if (validateForm() && !isSubmitting) {
+      setIsSubmitting(true);
+      try {
+        await onSubmit?.(formData);
+        setFormData({ name: '', email: '', message: '' });
+        setErrors({ name: '', email: '', message: '' });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -110,10 +117,10 @@ const ContactForm = ({ onSubmit, onCancel }: ContactFormProps) => {
       />
 
       <div style={{ display: 'flex', gap: `${spacing.xs}px` }}>
-        <Button type="submit" variant="primary">
-          Send
+        <Button type="submit" variant="primary" disabled={isSubmitting}>
+          {isSubmitting ? 'Sending...' : 'Send'}
         </Button>
-        <Button type="button" variant="secondary" onClick={handleCancel}>
+        <Button type="button" variant="secondary" onClick={handleCancel} disabled={isSubmitting}>
           Cancel
         </Button>
       </div>

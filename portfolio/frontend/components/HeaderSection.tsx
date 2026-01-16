@@ -77,7 +77,6 @@ const HeaderSection = () => {
             alignItems: 'center',
             gap: `${spacing.medium}px`,
           }}
-          className="navigation-block"
         >
           {['About Me', 'Contact', 'Resume', 'Projects'].map((item) => (
             <Link
@@ -99,6 +98,7 @@ const HeaderSection = () => {
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = colors.text_primary;
               }}
+              className="nav-link"
             >
               {item}
             </Link>
@@ -106,9 +106,9 @@ const HeaderSection = () => {
         </nav>
       </div>
 
-      <style jsx>{`
+      <style jsx global>{`
         @media (max-width: 768px) {
-          .navigation-block {
+          header nav {
             display: none !important;
           }
         }

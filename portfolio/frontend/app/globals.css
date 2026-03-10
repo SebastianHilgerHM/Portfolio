@@ -40,3 +40,348 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
   animation: scroll 30s linear infinite;
 }
+
+/* Hero Section Animations */
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.hero-rotating-border {
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.hero-circle {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.skill-orbit {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles - Header */
+@media (max-width: 768px) {
+  header nav {
+    display: none !important;
+  }
+}
+
+/* Responsive Styles - Hero Layout */
+@media (max-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  .hero-layout > div:first-child {
+    align-items: center;
+  }
+  .hero-layout h1 {
+    font-size: 56px !important;
+  }
+
+  .introduction-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 32px !important;
+  }
+
+  .curiosity-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-grid {
+    flex-direction: column !important;
+  }
+  .projects-grid > div {
+    flex-direction: row !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-layout h1 {
+    font-size: 42px !important;
+  }
+  .skill-orbit {
+    font-size: 10px !important;
+  }
+  .skill-orbit > div:last-child {
+    gap: 2px !important;
+  }
+  .skill-orbit > div:last-child > div {
+    width: 4px !important;
+    height: 4px !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-title-section {
+    padding-top: 64px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .projects-grid > div {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .introduction-section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  
+  .text-block {
+    padding: 24px !important;
+  }
+
+  .curiosity-section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  
+  .curiosity-grid {
+    gap: 24px !important;
+  }
+
+  .footer-wrapper {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .page-title {
+    font-size: 36px !important;
+  }
+  .page-subtitle {
+    font-size: 24px !important;
+  }
+}
+
+/* Album Covers Project */
+@media (max-width: 768px) {
+  .album-overlap-images {
+    flex-direction: column !important;
+  }
+  .album-overlap-images > div {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .album-overlap-img-right {
+    margin-left: 0 !important;
+    margin-top: -64px !important;
+  }
+
+  .overlap-images {
+    flex-direction: column !important;
+  }
+  .overlap-img-right {
+    margin-left: 0 !important;
+    margin-top: -64px !important;
+  }
+
+  .scrolling-images > div > div {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .overlay-image {
+    position: relative !important;
+    width: 100% !important;
+    height: 400px !important;
+    margin-bottom: 32px;
+  }
+  .overlay-cards {
+    margin-left: 0 !important;
+  }
+  .overlay-cards > div {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .overlay-section {
+    min-height: unset !important;
+  }
+
+  .resume-entry {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* Project Pages - Additional Responsive Styles */
+@media (max-width: 768px) {
+  .floating-card {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    max-width: 100% !important;
+    margin-top: 24px;
+  }
+
+  .steam-overlap-images {
+    flex-direction: column !important;
+  }
+  .steam-overlap-images > div {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .steam-overlap-img-right {
+    margin-left: 0 !important;
+    margin-top: -64px !important;
+  }
+
+  .experiments-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .poster-grid-bottom {
+    grid-template-columns: 1fr !important;
+  }
+  .scrolling-posters > div > div {
+    width: 150px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .experiments-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .poster-grid-bottom {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .scrolling-posters > div > div {
+    width: 180px !important;
+  }
+}
+
+/* Hover Effects - Prevent Hydration Issues */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #2ECC71 !important;
+}
+
+.hero-button-primary {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-button-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.hero-button-secondary {
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-button-secondary:hover {
+  border-color: #2ECC71 !important;
+  color: #2ECC71 !important;
+}
+
+/* Button Hover Effects */
+.button-primary {
+  transition: opacity 0.3s ease;
+}
+
+.button-primary:hover {
+  opacity: 0.8;
+}
+
+.button-outline {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-outline:hover {
+  background-color: #2ECC71;
+  color: #1A1B1C;
+}
+
+/* Animation Classes */
+.fade-in-animation {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Card Hover Effects */
+.card-interactive {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Drop Shadow Effect */
+.image-drop-shadow {
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.45));
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover .image-drop-shadow {
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.55));
+}
+
+/* Project Card Hover */
+.project-card {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}

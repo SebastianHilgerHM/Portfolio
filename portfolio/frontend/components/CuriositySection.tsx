@@ -91,25 +91,6 @@ const CuriositySection = ({
           <InterestCard key={interest.id} {...interest} />
         ))}
       </div>
-
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          .curiosity-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .curiosity-section {
-            padding-top: ${spacing.medium}px !important;
-            padding-bottom: ${spacing.medium}px !important;
-          }
-          
-          .curiosity-grid {
-            gap: ${spacing.small}px !important;
-          }
-        }
-      `}</style>
     </SectionContainer>
   );
 };

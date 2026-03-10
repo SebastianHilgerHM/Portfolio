@@ -35,7 +35,7 @@ const ResponsiveGrid = ({
 
   return (
     <>
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: ${breakpoint}px) {
           .${gridClass} {
             grid-template-columns: 1fr !important;

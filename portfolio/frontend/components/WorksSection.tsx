@@ -75,21 +75,6 @@ const WorksSection = ({ projects }: WorksSectionProps) => {
           );
         })}
       </div>
-
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          .project-card {
-            grid-template-columns: 1fr !important;
-          }
-        }
-
-        @media (max-width: 640px) {
-          section {
-            padding-top: ${spacing.small}px !important;
-            padding-bottom: ${spacing.small}px !important;
-          }
-        }
-      `}</style>
     </SectionContainer>
   );
 };

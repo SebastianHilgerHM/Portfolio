@@ -4,7 +4,6 @@
 
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Card from './Card';
 import Button from './Button';
@@ -17,8 +16,6 @@ interface ProjectGridCardProps {
 }
 
 const ProjectGridCard = ({ title, image, link }: ProjectGridCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
       style={{
@@ -26,12 +23,9 @@ const ProjectGridCard = ({ title, image, link }: ProjectGridCardProps) => {
         paddingBottom: `${spacing.large}px`,
         paddingRight: `${spacing.large}px`,
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Card */}
       <Card
-        hoveredState={isHovered}
         variant="interactive"
         padding="small"
         style={{
@@ -55,7 +49,6 @@ const ProjectGridCard = ({ title, image, link }: ProjectGridCardProps) => {
       
       {/* Text Card - Overlapping bottom right corner */}
       <Card
-        hoveredState={isHovered}
         variant="interactive"
         padding="small"
         style={{

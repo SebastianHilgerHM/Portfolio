@@ -87,7 +87,7 @@ const ContactForm = ({ onSubmit, onCancel }: ContactFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ animation: 'fadeIn 0.3s ease-in' }}>
+    <form onSubmit={handleSubmit} className="fade-in-animation">
       <FormInput
         id="name"
         label="Name"

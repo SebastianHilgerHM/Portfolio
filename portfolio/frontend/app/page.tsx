@@ -132,6 +132,7 @@ export default function Home() {
             >
               <a
                 href="/projects"
+                className="hero-button-primary"
                 style={{
                   padding: `${spacing.small}px ${spacing.medium}px`,
                   backgroundColor: colors.accent,
@@ -140,16 +141,7 @@ export default function Home() {
                   fontWeight: typography.fontWeight.medium,
                   textDecoration: 'none',
                   borderRadius: `${radius.base}px`,
-                  transition: 'transform 0.2s ease, opacity 0.2s ease',
                   display: 'inline-block',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.opacity = '0.9';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.opacity = '1';
                 }}
               >
                 View My Work
@@ -157,6 +149,7 @@ export default function Home() {
               
               <a
                 href="/contact"
+                className="hero-button-secondary"
                 style={{
                   padding: `${spacing.small}px ${spacing.medium}px`,
                   backgroundColor: 'transparent',
@@ -166,16 +159,7 @@ export default function Home() {
                   textDecoration: 'none',
                   borderRadius: `${radius.base}px`,
                   border: `2px solid ${colors.text_secondary}`,
-                  transition: 'border-color 0.2s ease, color 0.2s ease',
                   display: 'inline-block',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = colors.accent;
-                  e.currentTarget.style.color = colors.accent;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = colors.text_secondary;
-                  e.currentTarget.style.color = colors.text_primary;
                 }}
               >
                 Get in Touch
@@ -266,8 +250,9 @@ export default function Home() {
               ].map((skill, index) => {
                 const radius = 52; // % from center
                 const angleRad = (skill.angle * Math.PI) / 180;
-                const x = 50 + radius * Math.cos(angleRad - Math.PI / 2);
-                const y = 50 + radius * Math.sin(angleRad - Math.PI / 2);
+                const x = Number((50 + radius * Math.cos(angleRad - Math.PI / 2)).toFixed(2));
+                const y = Number((50 + radius * Math.sin(angleRad - Math.PI / 2)).toFixed(2));
+                const delay = Number((index * 100).toFixed(0));
                 
                 return (
                   <div
@@ -282,7 +267,7 @@ export default function Home() {
                       flexDirection: 'column',
                       alignItems: 'center',
                       gap: '4px',
-                      animationDelay: `${index * 0.1}s`,
+                      animationDelay: `${delay}ms`,
                     }}
                   >
                     <div
@@ -322,81 +307,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes rotate {
-            from {
-              transform: translate(-50%, -50%) rotate(0deg);
-            }
-            to {
-              transform: translate(-50%, -50%) rotate(360deg);
-            }
-          }
-
-          .hero-rotating-border {
-            animation: rotate 8s linear infinite;
-          }
-
-          @keyframes pulse {
-            0%, 100% {
-              opacity: 0.2;
-              transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-              opacity: 0.3;
-              transform: translate(-50%, -50%) scale(1.05);
-            }
-          }
-
-          .hero-circle {
-            animation: pulse 3s ease-in-out infinite;
-          }
-
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translate(-50%, -40%);
-            }
-            to {
-              opacity: 1;
-              transform: translate(-50%, -50%);
-            }
-          }
-
-          .skill-orbit {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-          }
-
-          @media (max-width: 1024px) {
-            .hero-layout {
-              grid-template-columns: 1fr !important;
-              text-align: center;
-            }
-            .hero-layout > div:first-child {
-              align-items: center;
-            }
-            .hero-layout h1 {
-              font-size: 56px !important;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .hero-layout h1 {
-              font-size: 42px !important;
-            }
-            .skill-orbit {
-              font-size: 10px !important;
-            }
-            .skill-orbit > div:last-child {
-              gap: 2px !important;
-            }
-            .skill-orbit > div:last-child > div {
-              width: 4px !important;
-              height: 4px !important;
-            }
-          }
-        `}</style>
       </div>
 
       {/* Works Section */}

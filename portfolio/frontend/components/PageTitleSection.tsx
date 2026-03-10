@@ -67,24 +67,6 @@ const PageTitleSection = ({ title, subtitle }: PageTitleSectionProps) => {
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .page-title-section {
-            padding-top: ${spacing.large}px !important;
-            padding-bottom: ${spacing.medium}px !important;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .page-title {
-            font-size: ${typography.fontSize.h2} !important;
-          }
-          .page-subtitle {
-            font-size: ${typography.fontSize.h4} !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };

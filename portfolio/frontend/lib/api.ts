@@ -77,7 +77,7 @@ async function fetchApi<T>(
 
     return data;
   } catch (error) {
-    console.error('API Error:', error);
+    // Silently handle network errors when backend is unavailable
     return {
       success: false,
       error: 'Network error. Please check your connection.',

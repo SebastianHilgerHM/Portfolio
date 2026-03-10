@@ -5,7 +5,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import Card from './Card';
 import ImageBlock from './ImageBlock';
 import { colors, spacing, typography, motion } from '@/lib/design-tokens';
@@ -27,8 +26,6 @@ const ProjectCard = ({
   link,
   imagePosition = 'right',
 }: ProjectCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const TextContent = (
     <Link
       href={link}
@@ -37,7 +34,7 @@ const ProjectCard = ({
         color: 'inherit',
       }}
     >
-      <Card hoveredState={isHovered} variant="hover">
+      <Card variant="hover">
         <div
           style={{
             height: '100%',
@@ -91,24 +88,19 @@ const ProjectCard = ({
       alt={title}
       height="350px"
       objectFit="contain"
-      hoveredState={isHovered}
       useDropShadow
     />
   );
 
   return (
     <div
+      className="project-card"
       style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: `${spacing.medium}px`,
         alignItems: 'center',
-        transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
-        transition: `all ${motion.duration.normal} ${motion.easing.standard}`,
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="project-card"
     >
       {imagePosition === 'left' ? (
         <>

@@ -205,15 +205,6 @@ export default function ResumePage() {
             </div>
           ))}
         </div>
-
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .resume-entry {
-              grid-template-columns: 1fr !important;
-              gap: ${spacing.xs}px !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       <FooterSection />

@@ -62,8 +62,8 @@ const fallbackProjects = [
 ];
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<{ title: string; image: string; link: string }[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState<{ title: string; image: string; link: string }[]>(fallbackProjects);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -79,13 +79,9 @@ export default function ProjectsPage() {
             link: project.link,
           }));
           setProjects(mappedProjects);
-        } else {
-          console.warn('API unavailable, using fallback data');
-          setProjects(fallbackProjects);
         }
       } catch (err) {
-        console.error('Error fetching projects:', err);
-        setError('Failed to load projects');
+        // Silently use fallback data when API is unavailable
         setProjects(fallbackProjects);
       } finally {
         setLoading(false);
@@ -156,23 +152,6 @@ export default function ProjectsPage() {
             </div>
           </div>
         )}
-
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .projects-grid {
-              flex-direction: column !important;
-            }
-            .projects-grid > div {
-              flex-direction: row !important;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .projects-grid > div {
-              flex-direction: column !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       <FooterSection />

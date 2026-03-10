@@ -14,7 +14,6 @@ interface ImageBlockProps {
   height?: string | number;
   maxWidth?: string | number;
   objectFit?: 'cover' | 'contain';
-  hoveredState?: boolean;
   rounded?: boolean;
   useDropShadow?: boolean;
 }
@@ -26,15 +25,10 @@ const ImageBlock = ({
   height = '420px',
   maxWidth,
   objectFit = 'cover',
-  hoveredState = false,
   rounded = true,
   useDropShadow = false,
 }: ImageBlockProps) => {
-  const filterStyle = useDropShadow
-    ? hoveredState
-      ? 'drop-shadow(0 10px 28px rgba(0,0,0,0.55))'
-      : 'drop-shadow(0 6px 16px rgba(0,0,0,0.45))'
-    : undefined;
+  const imageClass = useDropShadow ? 'image-drop-shadow' : '';
 
   return (
     <div
@@ -58,13 +52,10 @@ const ImageBlock = ({
           src={src}
           alt={alt}
           fill
+          className={imageClass}
           style={{
             objectFit,
             borderRadius: rounded ? `${radius.base}px` : undefined,
-            filter: filterStyle,
-            transition: useDropShadow
-              ? `filter ${motion.duration.normal} ${motion.easing.standard}`
-              : undefined,
           }}
         />
       </div>

@@ -10,7 +10,6 @@ import { colors, spacing, typography, radius, shadows, motion } from '@/lib/desi
 interface CardProps {
   children: ReactNode;
   variant?: 'default' | 'hover' | 'interactive';
-  hoveredState?: boolean;
   padding?: 'small' | 'medium' | 'large';
   onClick?: () => void;
   onMouseEnter?: () => void;
@@ -22,7 +21,6 @@ interface CardProps {
 const Card = ({ 
   children, 
   variant = 'default',
-  hoveredState = false,
   padding = 'medium',
   onClick,
   onMouseEnter,
@@ -40,26 +38,23 @@ const Card = ({
     backgroundColor: colors.primary,
     borderRadius: `${radius.base}px`,
     padding: `${paddingMap[padding]}px`,
-    boxShadow: hoveredState ? shadows.cardHover : shadows.card,
+    boxShadow: shadows.card,
     transition: `all ${motion.duration.normal} ${motion.easing.standard}`,
   };
 
-  const variantStyles: React.CSSProperties = variant === 'interactive' ? {
-    transform: hoveredState ? 'translateY(-4px)' : 'translateY(0)',
-    cursor: onClick ? 'pointer' : 'default',
-  } : {};
+  const variantClass = variant === 'interactive' ? 'card-interactive' : variant === 'hover' ? 'card-hover' : '';
 
   return (
     <div
       style={{
         ...baseStyles,
-        ...variantStyles,
         ...style,
+        cursor: onClick ? 'pointer' : 'default',
       }}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={className}
+      className={`${variantClass} ${className}`.trim()}
     >
       {children}
     </div>

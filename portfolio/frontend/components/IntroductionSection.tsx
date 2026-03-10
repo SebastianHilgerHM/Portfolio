@@ -63,26 +63,6 @@ const IntroductionSection = ({
           </p>
         </Card>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          .introduction-grid {
-            grid-template-columns: 1fr !important;
-            row-gap: ${spacing.medium}px !important;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .introduction-section {
-            padding-top: ${spacing.small}px !important;
-            padding-bottom: ${spacing.small}px !important;
-          }
-          
-          .text-block {
-            padding: ${spacing.small}px !important;
-          }
-        }
-      `}</style>
     </SectionContainer>
   );
 };

@@ -4,7 +4,6 @@
 
 'use client';
 
-import { useState } from 'react';
 import Card from './Card';
 import { colors, spacing, typography } from '@/lib/design-tokens';
 
@@ -15,18 +14,13 @@ export interface InterestCardProps {
 }
 
 const InterestCard = ({ id, title, description }: InterestCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <Card
-      hoveredState={isHovered}
       variant="interactive"
       style={{
         display: 'flex',
         flexDirection: 'column',
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <h3
         style={{

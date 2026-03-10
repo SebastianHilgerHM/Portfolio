@@ -48,35 +48,18 @@ const Button = ({
     },
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (variant === 'primary') {
-      e.currentTarget.style.opacity = '0.8';
-    } else if (variant === 'outline') {
-      e.currentTarget.style.backgroundColor = colors.accent;
-      e.currentTarget.style.color = colors.primary;
-    }
-  };
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (variant === 'primary') {
-      e.currentTarget.style.opacity = '1';
-    } else if (variant === 'outline') {
-      e.currentTarget.style.backgroundColor = 'transparent';
-      e.currentTarget.style.color = colors.accent;
-    }
-  };
+  const variantClass = `button-${variant}`;
 
   return (
     <button
       type={type}
       onClick={onClick}
+      className={variantClass}
       style={{
         ...baseStyles,
         ...variantStyles[variant],
         ...style,
       }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       {children}
     </button>

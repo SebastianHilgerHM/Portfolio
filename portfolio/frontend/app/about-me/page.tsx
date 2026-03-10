@@ -101,15 +101,6 @@ export default function AboutMe() {
             </p>
           </Card>
         </div>
-
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .introduction-grid {
-              grid-template-columns: 1fr !important;
-              row-gap: ${spacing.medium}px !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       {/* Curiosity Section */}
@@ -149,14 +140,6 @@ export default function AboutMe() {
             <InterestCard key={interest.id} {...interest} />
           ))}
         </div>
-
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .curiosity-grid {
-              grid-template-columns: 1fr !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       <FooterSection />

@@ -28,22 +28,6 @@ export default function AlbumCoversProject() {
 
       {/* Hero — Overlapping Images */}
       <SectionContainer paddingTop="medium" paddingBottom="xxlarge">
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .album-overlap-images {
-              flex-direction: column !important;
-            }
-            .album-overlap-images > div {
-              width: 100% !important;
-              margin-left: 0 !important;
-            }
-            .album-overlap-img-right {
-              margin-left: 0 !important;
-              margin-top: -${spacing.large}px !important;
-            }
-          }
-        `}</style>
-
         <div
           style={{
             display: 'flex',
@@ -275,27 +259,6 @@ export default function AlbumCoversProject() {
             </Card>
           </div>
         </div>
-
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .overlay-image {
-              position: relative !important;
-              width: 100% !important;
-              height: 400px !important;
-              margin-bottom: ${spacing.medium}px;
-            }
-            .overlay-cards {
-              margin-left: 0 !important;
-            }
-            .overlay-cards > div {
-              width: 100% !important;
-              margin-left: 0 !important;
-            }
-            .overlay-section {
-              min-height: unset !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       {/* Horizontal Scrolling Strip */}

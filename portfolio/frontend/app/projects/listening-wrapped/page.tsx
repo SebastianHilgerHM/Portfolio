@@ -212,20 +212,6 @@ export default function ListeningWrappedProject() {
           </div>
         </div>
 
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .floating-card {
-              position: relative !important;
-              bottom: auto !important;
-              right: auto !important;
-              max-width: 100% !important;
-              margin-top: ${spacing.small}px;
-            }
-          }
-        `}</style>
-      </SectionContainer>
-
-      {/* ── Minimal Charts ── */}
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
         <ResponsiveGrid columns="1fr 1fr" gap="medium" alignItems="stretch" breakpoint={768}>
           <Card padding="large">

@@ -29,7 +29,7 @@ const StaggeredCards = ({
 
   return (
     <>
-      <style>{`
+      <style suppressHydrationWarning>{`
         @media (max-width: 1024px) {
           .${containerId} > div {
             margin-left: 0 !important;

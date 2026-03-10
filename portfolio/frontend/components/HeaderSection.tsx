@@ -82,6 +82,7 @@ const HeaderSection = () => {
             <Link
               key={item}
               href={`/${item.toLowerCase().replace(' ', '-')}`}
+              className="nav-link"
               style={{
                 fontFamily: typography.fontFamily.mono,
                 fontSize: typography.fontSize.body,
@@ -90,29 +91,13 @@ const HeaderSection = () => {
                 letterSpacing: '0.03em',
                 textTransform: 'uppercase',
                 textDecoration: 'none',
-                transition: `color ${motion.duration.fast}`,
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = colors.accent;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = colors.text_primary;
-              }}
-              className="nav-link"
             >
               {item}
             </Link>
           ))}
         </nav>
       </div>
-
-      <style jsx global>{`
-        @media (max-width: 768px) {
-          header nav {
-            display: none !important;
-          }
-        }
-      `}</style>
     </header>
   );
 };

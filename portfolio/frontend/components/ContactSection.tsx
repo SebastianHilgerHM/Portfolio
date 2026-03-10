@@ -133,25 +133,25 @@ const ContactSection = ({
             {!showForm ? (
               <>
                 <h3
+                  className="fade-in-animation"
                   style={{
                     fontSize: typography.fontSize.body,
                     fontWeight: typography.fontWeight.medium,
                     color: colors.text_primary,
                     marginBottom: `${spacing.small}px`,
-                    animation: 'fadeIn 0.3s ease-in',
                   }}
                 >
                   ... or via Email directly
                 </h3>
                 <a
                   href={`mailto:${emailAddress}`}
+                  className="fade-in-animation"
                   style={{
                     fontSize: typography.fontSize.body,
                     color: colors.accent,
                     textDecoration: 'none',
                     display: 'block',
                     marginBottom: `${spacing.small}px`,
-                    animation: 'fadeIn 0.3s ease-in',
                   }}
                 >
                   {emailAddress}
@@ -161,7 +161,7 @@ const ContactSection = ({
                 </Button>
               </>
             ) : submitStatus === 'success' ? (
-              <div style={{ animation: 'fadeIn 0.3s ease-in' }}>
+              <div className="fade-in-animation">
                 <p
                   style={{
                     fontSize: typography.fontSize.body,
@@ -209,25 +209,6 @@ const ContactSection = ({
           </Card>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .contact-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </SectionContainer>
   );
 };

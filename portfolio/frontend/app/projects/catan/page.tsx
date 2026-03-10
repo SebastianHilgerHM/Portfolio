@@ -218,15 +218,6 @@ export default function CatanProject() {
             </div>
           ))}
         </ScrollingStrip>
-
-        <style jsx>{`
-          @media (max-width: 768px) {
-            :global(.scrolling-images) > div > div {
-              width: 200px !important;
-              height: 200px !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       {/* Additional Section - Text Left, Image Right + Full Width Image */}

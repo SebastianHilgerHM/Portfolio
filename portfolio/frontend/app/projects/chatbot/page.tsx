@@ -163,18 +163,6 @@ export default function ChatbotProject() {
           </Card>
         </ResponsiveGrid>
 
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .overlap-images {
-              flex-direction: column !important;
-            }
-            .overlap-img-right {
-              margin-left: 0 !important;
-              margin-top: -${spacing.large}px !important;
-            }
-          }
-        `}</style>
-
         {/* Overlapping images */}
         <div
           style={{

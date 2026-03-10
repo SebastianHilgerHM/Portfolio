@@ -198,22 +198,6 @@ export default function SteamRedesignProject() {
         </div>
 
         {/* Overlapping images */}
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .steam-overlap-images {
-              flex-direction: column !important;
-            }
-            .steam-overlap-images > div {
-              width: 100% !important;
-              margin-left: 0 !important;
-            }
-            .steam-overlap-img-right {
-              margin-left: 0 !important;
-              margin-top: -${spacing.large}px !important;
-            }
-          }
-        `}</style>
-
         <div
           style={{
             display: 'flex',

@@ -58,15 +58,6 @@ const FooterSection = () => {
           </span>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .footer-wrapper {
-            padding-left: ${spacing.medium}px !important;
-            padding-right: ${spacing.medium}px !important;
-          }
-        }
-      `}</style>
     </footer>
   );
 };

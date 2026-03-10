@@ -13,6 +13,7 @@ interface SectionContainerProps {
   paddingBottom?: 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge';
   maxWidth?: string;
   className?: string;
+  id?: string;
 }
 
 const SectionContainer = ({
@@ -21,6 +22,7 @@ const SectionContainer = ({
   paddingBottom = 'medium',
   maxWidth = '1200px',
   className = '',
+  id,
 }: SectionContainerProps) => {
   const paddingMap = {
     small: spacing.small,
@@ -40,6 +42,7 @@ const SectionContainer = ({
         overflow: 'hidden',
       }}
       className={className}
+      id={id}
     >
       <div
         style={{

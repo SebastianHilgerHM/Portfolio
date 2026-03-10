@@ -18,11 +18,10 @@ export default function Contact() {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   const socials = [
-    { platform: 'Instagram', handle: '@placeholder', url: 'https://instagram.com' },
-    { platform: 'LinkedIn', handle: '@placeholder', url: 'https://linkedin.com' },
+    { platform: 'LinkedIn', handle: 'Sebastian Hilger', url: 'https://linkedin.com/in/sebastian-hilger-057459357' },
   ];
 
-  const emailAddress = 'contact@example.com';
+  const emailAddress = 'sebastianhilger9@gmail.com';
 
   const handleFormSubmit = async (data: { name: string; email: string; message: string }) => {
     setSubmitStatus('loading');
@@ -169,7 +168,7 @@ export default function Contact() {
                   <p
                     style={{
                       fontSize: typography.fontSize.body,
-                      color: '#4CAF50',
+                      color: colors.accent,
                       fontWeight: typography.fontWeight.medium,
                     }}
                   >
@@ -182,7 +181,7 @@ export default function Contact() {
                     <p
                       style={{
                         fontSize: typography.fontSize.small,
-                        color: '#f44336',
+                        color: '#E57373',
                         marginBottom: `${spacing.xs}px`,
                       }}
                     >

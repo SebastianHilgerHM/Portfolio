@@ -87,14 +87,14 @@ export default function Home() {
                 padding: `${spacing.xs}px ${spacing.small}px`,
                 backgroundColor: colors.accent,
                 color: colors.background,
-                fontSize: typography.fontSize.small,
+                fontSize: typography.fontSize.body_small,
                 fontWeight: typography.fontWeight.bold,
                 letterSpacing: '2px',
                 width: 'fit-content',
-                borderRadius: `${radius.small}px`,
+                borderRadius: `${radius.base}px`,
               }}
             >
-              PORTFOLIO 2025
+              PORTFOLIO
             </div>
             
             <h1
@@ -139,7 +139,7 @@ export default function Home() {
                   fontSize: typography.fontSize.body,
                   fontWeight: typography.fontWeight.medium,
                   textDecoration: 'none',
-                  borderRadius: `${radius.small}px`,
+                  borderRadius: `${radius.base}px`,
                   transition: 'transform 0.2s ease, opacity 0.2s ease',
                   display: 'inline-block',
                 }}
@@ -164,7 +164,7 @@ export default function Home() {
                   fontSize: typography.fontSize.body,
                   fontWeight: typography.fontWeight.medium,
                   textDecoration: 'none',
-                  borderRadius: `${radius.small}px`,
+                  borderRadius: `${radius.base}px`,
                   border: `2px solid ${colors.text_secondary}`,
                   transition: 'border-color 0.2s ease, color 0.2s ease',
                   display: 'inline-block',
@@ -249,8 +249,8 @@ export default function Home() {
                 }}
               >
                 <div style={{ backgroundColor: colors.accent, borderRadius: `${radius.base}px` }} />
-                <div style={{ backgroundColor: colors.card, borderRadius: `${radius.base}px` }} />
-                <div style={{ backgroundColor: colors.card, borderRadius: `${radius.base}px` }} />
+                <div style={{ backgroundColor: colors.primary, borderRadius: `${radius.base}px` }} />
+                <div style={{ backgroundColor: colors.primary, borderRadius: `${radius.base}px` }} />
                 <div style={{ backgroundColor: colors.accent, borderRadius: `${radius.base}px` }} />
               </div>
 
@@ -287,7 +287,7 @@ export default function Home() {
                   >
                     <div
                       style={{
-                        fontSize: typography.fontSize.small,
+                        fontSize: typography.fontSize.body_small,
                         fontWeight: typography.fontWeight.bold,
                         color: colors.text_primary,
                         whiteSpace: 'nowrap',

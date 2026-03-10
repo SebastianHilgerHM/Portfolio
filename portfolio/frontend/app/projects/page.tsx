@@ -16,33 +16,48 @@ import { projectApi, Project } from '@/lib/api';
 const fallbackProjects = [
   {
     title: 'Poster Series',
-    image: '/images/posters.png',
+    image: '/images/page_projects/Posters_Main.png',
     link: '/projects/posters',
   },
   {
     title: 'DnD Chatbot',
-    image: '/images/chatbot.png',
-    link: '#',
+    image: '/images/page_projects/Dungeon_Mate_Main.png',
+    link: '/projects/chatbot',
   },
   {
     title: 'Steam Community-Tab Redesign',
-    image: '/images/steam_redesign.png',
-    link: '#',
+    image: '/images/page_projects/Steam_Main.png',
+    link: '/projects/steam-redesign',
   },
   {
     title: '3D Catan',
-    image: '/images/catan_3d.png',
+    image: '/images/page_projects/catan_main.png',
     link: '/projects/catan',
   },
   {
     title: 'Album Covers',
-    image: '/images/album_cover.png',
-    link: '#',
+    image: '/images/page_projects/Album_Spikes_Main.png',
+    link: '/projects/album-covers',
   },
   {
     title: 'MSB Service Center',
-    image: '/images/msb.png',
-    link: '#',
+    image: '/images/page_projects/MSB_Main.png',
+    link: '/projects/msb',
+  },
+  {
+    title: 'Listening Wrapped',
+    image: '/images/page_projects/Spotify_Main.png',
+    link: '/projects/listening-wrapped',
+  },
+  {
+    title: 'Moosburg Treefinder',
+    image: '/images/page_projects/Treefinder_Main.png',
+    link: '/projects/moosburg-treefinder',
+  },
+  {
+    title: '7Clash',
+    image: '/images/page_projects/7Clash_Main.png',
+    link: '/projects/7slots',
   },
 ];
 
@@ -89,7 +104,7 @@ export default function ProjectsPage() {
     <main
       style={{
         minHeight: '100vh',
-        backgroundColor: '#292929',
+        backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
         backgroundSize: '1145px 1062px',
@@ -107,7 +122,7 @@ export default function ProjectsPage() {
           </div>
         ) : error && projects.length === 0 ? (
           <div style={{ textAlign: 'center', padding: `${spacing.xxl}px` }}>
-            <p style={{ color: '#f44336', fontSize: typography.fontSize.body }}>
+            <p style={{ color: '#E57373', fontSize: typography.fontSize.body }}>
               {error}
             </p>
           </div>

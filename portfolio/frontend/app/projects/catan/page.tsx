@@ -6,9 +6,10 @@
 
 import Image from 'next/image';
 import HeaderSection from '@/components/HeaderSection';
+import PageTitleSection from '@/components/PageTitleSection';
 import FooterSection from '@/components/FooterSection';
-import { SectionContainer, Card } from '@/components/ui';
-import { colors, spacing, typography } from '@/lib/design-tokens';
+import { SectionContainer, Card, SectionHeader, ResponsiveGrid, StaggeredCards, ScrollingStrip, TechStack } from '@/components/ui';
+import { colors, spacing, typography, radius } from '@/lib/design-tokens';
 
 export default function CatanProject() {
   return (
@@ -23,31 +24,10 @@ export default function CatanProject() {
     >
       <HeaderSection />
 
-      {/* Hero Section with Title and Image */}
-      <SectionContainer paddingTop="large" paddingBottom="medium">
-        {/* Title */}
-        <div style={{ marginBottom: `${spacing.large}px` }}>
-          <h1
-            style={{
-              fontSize: typography.fontSize.h1,
-              fontWeight: typography.fontWeight.bold,
-              color: colors.text_primary,
-              marginBottom: `${spacing.xs}px`,
-            }}
-          >
-            Catan 3D
-          </h1>
-          <p
-            style={{
-              fontSize: typography.fontSize.h3,
-              color: colors.text_primary,
-              fontWeight: typography.fontWeight.regular,
-            }}
-          >
-            A browser version of the classic Catan Boardgame
-          </p>
-        </div>
+      <PageTitleSection title="Catan 3D" subtitle="A browser version of the classic Catan Boardgame" />
 
+      {/* Hero Image */}
+      <SectionContainer paddingTop="medium" paddingBottom="medium">
         {/* Main Project Image */}
         <div
           style={{
@@ -64,21 +44,13 @@ export default function CatanProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${spacing.xs}px`,
+              borderRadius: `${radius.base}px`,
             }}
           />
         </div>
 
         {/* Description Section */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: `${spacing.large}px`,
-            alignItems: 'start',
-          }}
-          className="project-content"
-        >
+        <ResponsiveGrid columns="1fr 1fr" gap="large" breakpoint={1024}>
           {/* Text Content */}
           <Card>
             <h2
@@ -98,7 +70,7 @@ export default function CatanProject() {
                 lineHeight: typography.lineHeight.normal,
               }}
             >
-              As part of a university course, our team of four developed a 3D digital version of the board game Catan. The project combined gameplay programming, interface design, and 3D asset creation into a unified product. To keep development moving efficiently, we implemented large parts of the game logic early using temporary placeholder pieces. This made it possible to test core interactions, resource distribution, and turn mechanics in parallel while I worked on producing the finalized assets.
+              As part of a university course, our team of four developed a 3D digital version of the board game Catan. The project combined gameplay programming, interface design, and 3D asset creation into a unified product.
             </p>
           </Card>
 
@@ -107,7 +79,7 @@ export default function CatanProject() {
             style={{
               position: 'relative',
               height: '400px',
-              borderRadius: `${spacing.xs}px`,
+              borderRadius: `${radius.base}px`,
               overflow: 'hidden',
             }}
           >
@@ -117,32 +89,20 @@ export default function CatanProject() {
               fill
               style={{
                 objectFit: 'cover',
-                borderRadius: `${spacing.xs}px`,
+                borderRadius: `${radius.base}px`,
               }}
             />
           </div>
-        </div>
-
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .project-content {
-              grid-template-columns: 1fr !important;
-            }
-          }
-        `}</style>
+        </ResponsiveGrid>
       </SectionContainer>
 
       {/* Additional Content Sections - Two Column Layout */}
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: `${spacing.large}px`,
-            alignItems: 'center',
-          }}
-          className="cluster-layout"
-        >
+        <SectionHeader level="h2" marginBottom="large">
+          Role &amp; Workflow
+        </SectionHeader>
+
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024}>
           {/* Left Column - Images Stacked */}
           <div
             style={{
@@ -164,7 +124,7 @@ export default function CatanProject() {
                 fill
                 style={{
                   objectFit: 'cover',
-                  borderRadius: `${spacing.xs}px`,
+                  borderRadius: `${radius.base}px`,
                 }}
               />
             </div>
@@ -181,155 +141,83 @@ export default function CatanProject() {
                 fill
                 style={{
                   objectFit: 'cover',
-                  borderRadius: `${spacing.xs}px`,
+                  borderRadius: `${radius.base}px`,
                 }}
               />
             </div>
           </div>
 
           {/* Right Column - Text Cards in Staggered Layout */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: `${spacing.small}px`,
-              position: 'relative',
-            }}
-            className="text-cluster"
-          >
-            <Card padding="small" style={{ width: '70%' }}>
-              <h3
-                style={{
-                  fontSize: typography.fontSize.h3,
-                  fontWeight: typography.fontWeight.bold,
-                  color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
-                }}
-              >
-                Role & Workflow
-              </h3>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                My primary responsibility within the team was shaping the visual side of the project.
-              </p>
-            </Card>
-            <Card padding="small" style={{ marginLeft: '40%' }}>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                Returning to Blender after a long pause introduced some friction at the start, particularly when dealing with topology, shading, and consistency across different models.
-              </p>
-            </Card>
-            <Card padding="small" style={{ marginRight: '30%' }}>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                Alongside the modeling itself, I coordinated with the programming side to ensure the asset formats and scales fit smoothly into the existing logic and Unity pipeline.
-              </p>
-            </Card>
-            <Card padding="small" style={{ marginLeft: '35%' }}>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                This split workflow allowed the visuals and mechanics to evolve without blocking each other, creating a steady pace of iteration and refinement throughout the semester.
-              </p>
-            </Card>
-          </div>
-        </div>
+          <StaggeredCards
+            items={[
+              {
+                width: '70%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    My primary responsibility within the team was shaping the visual side of the project.
+                  </p>
+                ),
+              },
+              {
+                marginLeft: '40%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    Returning to Blender after a long pause introduced some friction at the start, particularly when dealing with topology, shading, and consistency across different models.
+                  </p>
+                ),
+              },
+              {
+                marginRight: '30%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    Alongside the modeling itself, I coordinated with the programming side to ensure the asset formats and scales fit smoothly into the existing logic and Unity pipeline.
+                  </p>
+                ),
+              },
+              {
+                marginLeft: '35%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    This split workflow allowed the visuals and mechanics to evolve without blocking each other, creating a steady pace of iteration and refinement throughout the semester.
+                  </p>
+                ),
+              },
+            ]}
+          />
+        </ResponsiveGrid>
 
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .cluster-layout {
-              grid-template-columns: 1fr !important;
-            }
-            .text-cluster > div {
-              margin-left: 0 !important;
-              margin-right: 0 !important;
-            }
-          }
-        `}</style>
       </SectionContainer>
 
       {/* Weekly Experiments Section */}
       <SectionContainer paddingTop="medium" paddingBottom="medium">
-        <h2
-          style={{
-            fontSize: typography.fontSize.h2,
-            fontWeight: typography.fontWeight.bold,
-            color: colors.text_primary,
-            marginBottom: `${spacing.large}px`,
-          }}
-        >
+        <SectionHeader level="h2" marginBottom="large">
           Visual Direction
-        </h2>
+        </SectionHeader>
 
         {/* Scrolling Images Container */}
-        <div
-          style={{
-            width: '100%',
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-        >
-          <div
-          className="scrolling-images"
-          style={{
-            display: 'flex',
-            gap: `${spacing.medium}px`,
-          }}
-        >
-            {/* Duplicate the images for seamless loop */}
-            {[...Array(2)].map((_, groupIndex) => (
-              <div
-                key={groupIndex}
+        <ScrollingStrip gap="medium" className="scrolling-images">
+          {['center', 'clay', 'ore', 'sheep', 'water', 'wood'].map((name) => (
+            <div
+              key={name}
+              style={{
+                position: 'relative',
+                width: '300px',
+                height: '300px',
+                flexShrink: 0,
+              }}
+            >
+              <Image
+                src={`/images/page_catan/a_${name}.png`}
+                alt={`Catan ${name}`}
+                fill
                 style={{
-                  display: 'flex',
-                  gap: `${spacing.medium}px`,
-                  flexShrink: 0,
+                  objectFit: 'cover',
+                  borderRadius: `${radius.base}px`,
                 }}
-              >
-                {['center', 'clay', 'ore', 'sheep', 'water', 'wood'].map((name) => (
-                  <div
-                    key={name}
-                    style={{
-                      position: 'relative',
-                      width: '300px',
-                      height: '300px',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Image
-                      src={`/images/page_catan/a_${name}.png`}
-                      alt={`Catan ${name}`}
-                      fill
-                      style={{
-                        objectFit: 'cover',
-                        borderRadius: `${spacing.xs}px`,
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+              />
+            </div>
+          ))}
+        </ScrollingStrip>
 
         <style jsx>{`
           @media (max-width: 768px) {
@@ -344,60 +232,38 @@ export default function CatanProject() {
       {/* Additional Section - Text Left, Image Right + Full Width Image */}
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
         {/* Two Column Layout */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: `${spacing.large}px`,
-            alignItems: 'center',
-            marginBottom: `${spacing.xxl}px`,
-          }}
-          className="reverse-cluster-layout"
-        >
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" style={{ marginBottom: `${spacing.xxl}px` }} breakpoint={1024}>
           {/* Left Column - Text Cards in Staggered Layout */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: `${spacing.small}px`,
-              position: 'relative',
-            }}
-            className="text-cluster-left"
-          >
-            <Card padding="small" style={{ marginLeft: '30%', width: '65%' }}>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                The finished 3D models leaned toward stylized realism, aiming for clear visual readability without becoming overly detailed.
-              </p>
-            </Card>
-            <Card padding="small" style={{ width: '50%' }}>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                The finished 3D models leaned toward stylized realism, aiming for clear visual readability without becoming overly detailed.
-              </p>
-            </Card>
-            <Card padding="small" style={{ marginLeft: '25%', width: '70%' }}>
-              <p
-                style={{
-                  fontSize: typography.fontSize.body,
-                  color: colors.text_secondary,
-                  lineHeight: typography.lineHeight.normal,
-                }}
-              >
-                Subtle environmental lighting helped bind the scene together, giving the board a cohesive digital presence distinct from the physical tabletop version.
-              </p>
-            </Card>
-          </div>
+          <StaggeredCards
+            items={[
+              {
+                marginLeft: '30%',
+                width: '65%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    The finished 3D models leaned towards a low poly style, both to ensure that the visual quality of the project does not suffer and to keep the asset creation process manageable within the time constraints of the project.
+                  </p>
+                ),
+              },
+              {
+                width: '50%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    The design process started with a number of prototype assets that were used to test the core mechanics of the game. In addition to this, I created multiple different parts for the models, whilst also looking for free 3D assets that could be used to fill out the tiles.
+                  </p>
+                ),
+              },
+              {
+                marginLeft: '25%',
+                width: '70%',
+                content: (
+                  <p style={{ fontSize: typography.fontSize.body, color: colors.text_secondary, lineHeight: typography.lineHeight.normal }}>
+                    During the final stages of the project, I focused on assembling the different parts into cohesive models that could be importet into the game, while also itterating over the models to add more detail and polish.
+                  </p>
+                ),
+              },
+            ]}
+          />
 
           {/* Right Column - Single Large Image */}
           <div
@@ -413,11 +279,11 @@ export default function CatanProject() {
               fill
               style={{
                 objectFit: 'cover',
-                borderRadius: `${spacing.xs}px`,
+                borderRadius: `${radius.base}px`,
               }}
             />
           </div>
-        </div>
+        </ResponsiveGrid>
 
         {/* Full Width Image Below */}
         <div
@@ -434,22 +300,16 @@ export default function CatanProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${spacing.xs}px`,
+              borderRadius: `${radius.base}px`,
             }}
           />
         </div>
 
-        <style jsx>{`
-          @media (max-width: 1024px) {
-            .reverse-cluster-layout {
-              grid-template-columns: 1fr !important;
-            }
-            .text-cluster-left > div {
-              margin-left: 0 !important;
-              width: 100% !important;
-            }
-          }
-        `}</style>
+      </SectionContainer>
+
+      {/* Tech Stack */}
+      <SectionContainer paddingTop="medium" paddingBottom="medium">
+        <TechStack items={['Blender', 'Figma', 'Python', 'Three.js']} />
       </SectionContainer>
 
       <FooterSection />

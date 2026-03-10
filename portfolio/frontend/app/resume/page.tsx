@@ -17,7 +17,7 @@ export default function ResumePage() {
       dateRange: 'Oct 2024 - Present',
       title: 'Munich University of Applied Sciences',
       description:
-        'I started attending the Munich University of Applied Sciences in October 2024, after studying Computer Science at LMU for two Semesters. When I applied for Computer Science and Design at MUC.DAI, I didn\'t yet know how much I would enjoy the design aspect of the degree.',
+        'I started attending the Munich University of Applied Sciences in October 2024, after studying Computer Science at LMU for two Semesters. With my application for Computer Science and Design at MUC.DAI, I took a major shift towards a more design-oriented focus. I am currently in my fourth semester.',
       image: '/images/resume/0_hm.jpg',
     },
     {
@@ -42,7 +42,7 @@ export default function ResumePage() {
     <main
       style={{
         minHeight: '100vh',
-        backgroundColor: '#292929',
+        backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
         backgroundSize: '1145px 1062px',

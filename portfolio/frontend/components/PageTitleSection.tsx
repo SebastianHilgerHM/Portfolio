@@ -8,9 +8,10 @@ import { colors, spacing, typography, zIndex } from '@/lib/design-tokens';
 
 interface PageTitleSectionProps {
   title: string;
+  subtitle?: string;
 }
 
-const PageTitleSection = ({ title }: PageTitleSectionProps) => {
+const PageTitleSection = ({ title, subtitle }: PageTitleSectionProps) => {
   return (
     <section
       style={{
@@ -45,11 +46,25 @@ const PageTitleSection = ({ title }: PageTitleSectionProps) => {
               fontWeight: typography.fontWeight.bold,
               color: colors.text_primary,
               maxWidth: '800px',
+              marginBottom: subtitle ? `${spacing.xs}px` : undefined,
             }}
             className="page-title"
           >
             {title}
           </h1>
+          {subtitle && (
+            <p
+              style={{
+                fontSize: typography.fontSize.h3,
+                color: colors.text_primary,
+                fontWeight: typography.fontWeight.regular,
+                maxWidth: '800px',
+              }}
+              className="page-subtitle"
+            >
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
 
@@ -64,6 +79,9 @@ const PageTitleSection = ({ title }: PageTitleSectionProps) => {
         @media (max-width: 640px) {
           .page-title {
             font-size: ${typography.fontSize.h2} !important;
+          }
+          .page-subtitle {
+            font-size: ${typography.fontSize.h4} !important;
           }
         }
       `}</style>

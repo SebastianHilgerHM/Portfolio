@@ -12,17 +12,17 @@ const FooterSection = () => {
     <footer
       style={{
         width: '100%',
-        height: '146px',
+        height: '9.125rem',
         backgroundColor: colors.primary,
       }}
     >
       <div
         style={{
-          maxWidth: '1200px',
+          maxWidth: '75rem',
           height: '100%',
           margin: '0 auto',
-          paddingLeft: `${spacing.large}px`,
-          paddingRight: `${spacing.large}px`,
+          paddingLeft: spacing.large,
+          paddingRight: spacing.large,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'flex-start',
@@ -34,7 +34,7 @@ const FooterSection = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: `${spacing.small}px`,
+            gap: spacing.small,
           }}
         >
           {/* LogoIcon */}

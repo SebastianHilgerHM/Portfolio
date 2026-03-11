@@ -19,7 +19,7 @@ export default function PostersProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -34,7 +34,7 @@ export default function PostersProject() {
             width: '100%',
             overflow: 'hidden',
             position: 'relative',
-            marginBottom: `${spacing.xxl}px`,
+            marginBottom: spacing.xxl,
           }}
         >
           <ScrollingStrip gap="small" className="scrolling-posters">
@@ -44,11 +44,11 @@ export default function PostersProject() {
                 key={`final-${num}`}
                 style={{
                   position: 'relative',
-                  width: '240px',
+                  width: '15rem',
                   aspectRatio: '1/1.414',
                   flexShrink: 0,
                   overflow: 'hidden',
-                  borderRadius: `${radius.base}px`,
+                  borderRadius: radius.base,
                 }}
               >
                 <Image
@@ -63,11 +63,11 @@ export default function PostersProject() {
             <div
               style={{
                 position: 'relative',
-                width: '240px',
+                width: '15rem',
                 aspectRatio: '1/1.414',
                 flexShrink: 0,
                 overflow: 'hidden',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             >
               <Image
@@ -83,11 +83,11 @@ export default function PostersProject() {
                 key={name}
                 style={{
                   position: 'relative',
-                  width: '240px',
+                  width: '15rem',
                   aspectRatio: '1/1.414',
                   flexShrink: 0,
                   overflow: 'hidden',
-                  borderRadius: `${radius.base}px`,
+                  borderRadius: radius.base,
                 }}
               >
                 <Image
@@ -106,8 +106,8 @@ export default function PostersProject() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: `${spacing.medium}px`,
-            marginBottom: `${spacing.xxl}px`,
+            gap: spacing.medium,
+            marginBottom: spacing.xxl,
           }}
           className="poster-grid-bottom"
         >
@@ -119,7 +119,7 @@ export default function PostersProject() {
                 width: '100%',
                 aspectRatio: '1/1.414',
                 overflow: 'hidden',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             >
               <Image
@@ -155,7 +155,7 @@ export default function PostersProject() {
 
       {/* My Interpretation Section */}
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024} style={{ justifyItems: 'center', marginBottom: `${spacing.xxl}px` }}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024} style={{ justifyItems: 'center', marginBottom: spacing.xxl }}>
           {/* Left Column - Text Cards in Staggered Layout */}
           <StaggeredCards
             alignItems="center"
@@ -169,7 +169,7 @@ export default function PostersProject() {
                         fontSize: typography.fontSize.h3,
                         fontWeight: typography.fontWeight.bold,
                         color: colors.text_primary,
-                        marginBottom: `${spacing.small}px`,
+                        marginBottom: spacing.small,
                       }}
                     >
                       My Interpretation
@@ -216,7 +216,7 @@ export default function PostersProject() {
               width: '100%',
               aspectRatio: '1/1.414',
               overflow: 'hidden',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           >
             <Image
@@ -241,7 +241,7 @@ export default function PostersProject() {
             fontSize: typography.fontSize.h4,
             color: colors.text_primary,
             lineHeight: typography.lineHeight.normal,
-            marginBottom: `${spacing.large}px`,
+            marginBottom: spacing.large,
           }}
         >
           A collection of some of my Posters
@@ -252,7 +252,7 @@ export default function PostersProject() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: `${spacing.medium}px`,
+            gap: spacing.medium,
           }}
           className="experiments-grid"
         >
@@ -264,7 +264,7 @@ export default function PostersProject() {
                 width: '100%',
                 aspectRatio: '1/1.414',
                 overflow: 'hidden',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             >
               <Image

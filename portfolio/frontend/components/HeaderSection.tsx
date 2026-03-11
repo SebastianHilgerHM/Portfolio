@@ -13,7 +13,7 @@ const HeaderSection = () => {
     <header
       style={{
         width: '100%',
-        height: '40px',
+        height: '2.5rem',
         backgroundColor: colors.primary,
         position: 'sticky',
         top: 0,
@@ -22,10 +22,10 @@ const HeaderSection = () => {
     >
       <div
         style={{
-          maxWidth: '1200px',
+          maxWidth: '75rem',
           height: '100%',
           margin: '0 auto',
-          padding: `0 ${spacing.xs / 2}px`,
+          padding: '0 0.25rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -38,7 +38,7 @@ const HeaderSection = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: `${spacing.xs}px`,
+            gap: spacing.xs,
             textDecoration: 'none',
           }}
         >
@@ -50,7 +50,7 @@ const HeaderSection = () => {
             height={24}
             priority
             style={{
-              marginBottom: '2px',
+              marginBottom: '0.125rem',
             }}
           />
           
@@ -75,7 +75,7 @@ const HeaderSection = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: `${spacing.medium}px`,
+            gap: spacing.medium,
           }}
         >
           {['About Me', 'Contact', 'Resume', 'Projects'].map((item) => (

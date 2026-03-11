@@ -19,7 +19,7 @@ export default function AlbumCoversProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -51,7 +51,7 @@ export default function AlbumCoversProject() {
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -62,7 +62,7 @@ export default function AlbumCoversProject() {
               width: '55%',
               flexShrink: 0,
               marginLeft: '-10%',
-              marginTop: `${spacing.xxl}px`,
+              marginTop: spacing.xxl,
               zIndex: 2,
             }}
           >
@@ -74,7 +74,7 @@ export default function AlbumCoversProject() {
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -94,7 +94,7 @@ export default function AlbumCoversProject() {
           Direction and Focus
         </SectionHeader>
 
-        <ResponsiveGrid columns="1fr 1fr" gap="medium" alignItems="center" breakpoint={768}>
+        <ResponsiveGrid columns="1fr 1fr" gap="medium" alignItems="start" breakpoint={768}>
           {/* Left — Image */}
           <div
             style={{
@@ -102,7 +102,7 @@ export default function AlbumCoversProject() {
               width: '100%',
               aspectRatio: '1/1',
               overflow: 'hidden',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           >
             <Image
@@ -144,7 +144,7 @@ export default function AlbumCoversProject() {
             fontSize: typography.fontSize.h2,
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
-            marginBottom: `${spacing.large}px`,
+            marginBottom: spacing.large,
           }}
         >
           Visual Approach
@@ -154,7 +154,7 @@ export default function AlbumCoversProject() {
           style={{
             position: 'relative',
             width: '100%',
-            minHeight: '400px',
+            minHeight: '25rem',
           }}
           className="overlay-section"
         >
@@ -166,7 +166,7 @@ export default function AlbumCoversProject() {
               left: 0,
               width: '55%',
               height: '100%',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
               overflow: 'hidden',
             }}
             className="overlay-image"
@@ -186,9 +186,9 @@ export default function AlbumCoversProject() {
               marginLeft: '40%',
               display: 'flex',
               flexDirection: 'column',
-              gap: `${spacing.small}px`,
-              paddingTop: `${spacing.medium}px`,
-              paddingBottom: `${spacing.medium}px`,
+              gap: spacing.small,
+              paddingTop: spacing.medium,
+              paddingBottom: spacing.medium,
             }}
             className="overlay-cards"
           >
@@ -198,7 +198,7 @@ export default function AlbumCoversProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 Typography as Identity
@@ -220,7 +220,7 @@ export default function AlbumCoversProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 Texture &amp; Materiality
@@ -242,7 +242,7 @@ export default function AlbumCoversProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 Composition
@@ -268,7 +268,7 @@ export default function AlbumCoversProject() {
             fontSize: typography.fontSize.h2,
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
-            marginBottom: `${spacing.large}px`,
+            marginBottom: spacing.large,
           }}
         >
           The Collection
@@ -288,7 +288,7 @@ export default function AlbumCoversProject() {
                 width: '100%',
                 aspectRatio: '1/1',
                 overflow: 'hidden',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             >
               <Image

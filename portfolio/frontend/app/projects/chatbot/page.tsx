@@ -18,21 +18,21 @@ export default function ChatbotProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
 
       {/* Hero Section - Title Left, Logo Right */}
       <SectionContainer paddingTop="large" paddingBottom="medium">
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024}>
           <div>
             <h1
               style={{
                 fontSize: typography.fontSize.h1,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.small}px`,
+                marginBottom: spacing.small,
                 lineHeight: 1.05,
               }}
             >
@@ -53,7 +53,7 @@ export default function ChatbotProject() {
           <ImageBlock
             src="/images/page_chatbot/Dungeon_Mate_Logo.png"
             alt="Dungeon Mate Logo"
-            height="400px"
+            height="25rem"
             objectFit="contain"
           />
         </ResponsiveGrid>
@@ -96,7 +96,7 @@ export default function ChatbotProject() {
         </ResponsiveGrid>
 
         {/* Section image */}
-        <div style={{ marginTop: `${spacing.xxl}px` }}>
+        <div style={{ marginTop: spacing.xxl }}>
           <Image
             src="/images/page_chatbot/Dungeon_Mate_Chat.png"
             alt="Dungeon Mate chat interface"
@@ -105,7 +105,7 @@ export default function ChatbotProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>
@@ -124,7 +124,7 @@ export default function ChatbotProject() {
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.xs}px`,
+                marginBottom: spacing.xs,
               }}
             >
               Visuals
@@ -146,7 +146,7 @@ export default function ChatbotProject() {
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.xs}px`,
+                marginBottom: spacing.xs,
               }}
             >
               Personality
@@ -168,7 +168,7 @@ export default function ChatbotProject() {
           style={{
             display: 'flex',
             alignItems: 'flex-start',
-            marginTop: `${spacing.xxl}px`,
+            marginTop: spacing.xxl,
           }}
           className="overlap-images"
         >
@@ -188,7 +188,7 @@ export default function ChatbotProject() {
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -199,7 +199,7 @@ export default function ChatbotProject() {
               width: '55%',
               flexShrink: 0,
               marginLeft: `-10%`,
-              marginTop: `${spacing.xxl}px`,
+              marginTop: spacing.xxl,
               zIndex: 2,
             }}
           >
@@ -211,7 +211,7 @@ export default function ChatbotProject() {
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>

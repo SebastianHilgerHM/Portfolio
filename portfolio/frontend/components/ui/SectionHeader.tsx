@@ -36,7 +36,7 @@ const SectionHeader = ({
         fontSize,
         fontWeight: typography.fontWeight.bold,
         color: colors.text_primary,
-        marginBottom: `${marginMap[marginBottom]}px`,
+        marginBottom: marginMap[marginBottom],
         textAlign: align,
       }}
     >

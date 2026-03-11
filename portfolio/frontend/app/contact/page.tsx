@@ -59,7 +59,7 @@ export default function Contact() {
         minHeight: '100vh',
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
         backgroundPosition: '0 0',
         overflowX: 'hidden',
         width: '100%',
@@ -73,7 +73,7 @@ export default function Contact() {
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gap: `${spacing.large}px`,
+            gap: spacing.large,
             alignItems: 'start',
           }}
           className="contact-grid"
@@ -89,7 +89,7 @@ export default function Contact() {
                   fontSize: typography.fontSize.body,
                   fontWeight: typography.fontWeight.medium,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.small}px`,
+                  marginBottom: spacing.small,
                 }}
               >
                 Contact me through my Socials...
@@ -98,14 +98,14 @@ export default function Contact() {
                 <div
                   key={social.platform}
                   style={{
-                    marginBottom: `${spacing.xs}px`,
+                    marginBottom: spacing.xs,
                   }}
                 >
                   <p
                     style={{
                       fontSize: typography.fontSize.body,
                       color: colors.text_primary,
-                      marginBottom: '4px',
+                      marginBottom: '0.25rem',
                     }}
                   >
                     {social.platform}:
@@ -141,7 +141,7 @@ export default function Contact() {
                       fontSize: typography.fontSize.body,
                       fontWeight: typography.fontWeight.medium,
                       color: colors.text_primary,
-                      marginBottom: `${spacing.small}px`,
+                      marginBottom: spacing.small,
                     }}
                   >
                     ... or via Email directly
@@ -154,7 +154,7 @@ export default function Contact() {
                       color: colors.accent,
                       textDecoration: 'none',
                       display: 'block',
-                      marginBottom: `${spacing.small}px`,
+                      marginBottom: spacing.small,
                     }}
                   >
                     {emailAddress}
@@ -182,7 +182,7 @@ export default function Contact() {
                       style={{
                         fontSize: typography.fontSize.small,
                         color: '#E57373',
-                        marginBottom: `${spacing.xs}px`,
+                        marginBottom: spacing.xs,
                       }}
                     >
                       {errorMessage}
@@ -201,7 +201,7 @@ export default function Contact() {
                       style={{
                         fontSize: typography.fontSize.small,
                         color: colors.text_secondary,
-                        marginTop: `${spacing.xs}px`,
+                        marginTop: spacing.xs,
                       }}
                     >
                       Sending...

@@ -116,7 +116,7 @@ const ContactForm = ({ onSubmit, onCancel }: ContactFormProps) => {
         rows={4}
       />
 
-      <div style={{ display: 'flex', gap: `${spacing.xs}px` }}>
+      <div style={{ display: 'flex', gap: spacing.xs }}>
         <Button type="submit" variant="primary" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send'}
         </Button>

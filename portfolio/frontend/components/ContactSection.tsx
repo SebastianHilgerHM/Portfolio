@@ -70,7 +70,7 @@ const ContactSection = ({
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: `${spacing.large}px`,
+          gap: spacing.large,
           alignItems: 'start',
         }}
         className="contact-grid"
@@ -86,7 +86,7 @@ const ContactSection = ({
                 fontSize: typography.fontSize.body,
                 fontWeight: typography.fontWeight.medium,
                 color: colors.text_primary,
-                marginBottom: `${spacing.small}px`,
+                marginBottom: spacing.small,
               }}
             >
               Contact me through my Socials...
@@ -95,14 +95,14 @@ const ContactSection = ({
               <div
                 key={social.platform}
                 style={{
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 <p
                   style={{
                     fontSize: typography.fontSize.body,
                     color: colors.text_primary,
-                    marginBottom: '4px',
+                    marginBottom: '0.25rem',
                   }}
                 >
                   {social.platform}:
@@ -138,7 +138,7 @@ const ContactSection = ({
                     fontSize: typography.fontSize.body,
                     fontWeight: typography.fontWeight.medium,
                     color: colors.text_primary,
-                    marginBottom: `${spacing.small}px`,
+                    marginBottom: spacing.small,
                   }}
                 >
                   ... or via Email directly
@@ -151,7 +151,7 @@ const ContactSection = ({
                     color: colors.accent,
                     textDecoration: 'none',
                     display: 'block',
-                    marginBottom: `${spacing.small}px`,
+                    marginBottom: spacing.small,
                   }}
                 >
                   {emailAddress}
@@ -179,7 +179,7 @@ const ContactSection = ({
                     style={{
                       fontSize: typography.fontSize.small,
                       color: '#f44336',
-                      marginBottom: `${spacing.xs}px`,
+                      marginBottom: spacing.xs,
                     }}
                   >
                     {errorMessage}
@@ -198,7 +198,7 @@ const ContactSection = ({
                     style={{
                       fontSize: typography.fontSize.small,
                       color: colors.text_secondary,
-                      marginTop: `${spacing.xs}px`,
+                      marginTop: spacing.xs,
                     }}
                   >
                     Sending...

@@ -18,7 +18,7 @@ export default function MsbProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -30,7 +30,7 @@ export default function MsbProject() {
             fontSize: typography.fontSize.h1,
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
-            marginBottom: `${spacing.xs}px`,
+            marginBottom: spacing.xs,
             lineHeight: 1.05,
           }}
         >
@@ -50,7 +50,7 @@ export default function MsbProject() {
 
       {/* Hero Image */}
       <SectionContainer paddingTop="small" paddingBottom="medium">
-        <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+        <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
           <Image
             src="/images/page_msb/MSB_Main.png"
             alt="MSB Service Center Prototype"
@@ -70,7 +70,7 @@ export default function MsbProject() {
               color: colors.text_primary,
               lineHeight: typography.lineHeight.loose,
               textAlign: 'center',
-              maxWidth: '900px',
+              maxWidth: '56.25rem',
               margin: '0 auto',
             }}
           >
@@ -82,7 +82,7 @@ export default function MsbProject() {
       {/* Pivot - Accent title card */}
       <SectionContainer paddingTop="xxlarge" paddingBottom="medium">
         <Card>
-          <ResponsiveGrid columns="300px 1fr" gap="medium" alignItems="start" breakpoint={768}>
+          <ResponsiveGrid columns="18.75rem 1fr" gap="medium" alignItems="start" breakpoint={768}>
             <h2
               style={{
                 fontSize: typography.fontSize.h2,
@@ -113,12 +113,12 @@ export default function MsbProject() {
           Concept
         </SectionHeader>
 
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024}>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: `${spacing.medium}px`,
+              gap: spacing.medium,
             }}
           >
             <Card>
@@ -127,7 +127,7 @@ export default function MsbProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 Public Service Hub
@@ -149,7 +149,7 @@ export default function MsbProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 Social Accessibility
@@ -169,7 +169,7 @@ export default function MsbProject() {
           <ImageBlock
             src="/images/page_msb/MSB_Item.png"
             alt="MSB Service Center concept"
-            height="500px"
+            height="31.25rem"
           />
         </ResponsiveGrid>
       </SectionContainer>
@@ -187,7 +187,7 @@ export default function MsbProject() {
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.xs}px`,
+                marginBottom: spacing.xs,
               }}
             >
               Hackathon Sprint
@@ -209,7 +209,7 @@ export default function MsbProject() {
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.xs}px`,
+                marginBottom: spacing.xs,
               }}
             >
               Core Logic
@@ -230,8 +230,8 @@ export default function MsbProject() {
           style={{
             width: '100%',
             position: 'relative',
-            marginTop: `${spacing.large}px`,
-            marginBottom: `${spacing.large}px`,
+            marginTop: spacing.large,
+            marginBottom: spacing.large,
           }}
         >
           <Image
@@ -242,7 +242,7 @@ export default function MsbProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>
@@ -261,7 +261,7 @@ export default function MsbProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>

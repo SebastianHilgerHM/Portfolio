@@ -36,6 +36,9 @@ const StaggeredCards = ({
             margin-right: 0 !important;
             width: 100% !important;
           }
+          .${containerId} {
+            align-items: flex-start !important;
+          }
         }
       `}</style>
       <div
@@ -43,7 +46,7 @@ const StaggeredCards = ({
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: `${spacing.small}px`,
+          gap: spacing.small,
           position: 'relative',
           alignItems,
         }}

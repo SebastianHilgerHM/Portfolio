@@ -31,7 +31,7 @@ const ImportantText = ({
         fontSize: typography.fontSize.h3,
         fontWeight: typography.fontWeight.bold,
         color: colors.text_primary,
-        marginBottom: `${marginMap[marginBottom]}px`,
+        marginBottom: marginMap[marginBottom],
         textAlign: align,
       }}
     >

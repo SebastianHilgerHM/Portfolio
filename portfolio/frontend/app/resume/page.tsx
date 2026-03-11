@@ -45,7 +45,7 @@ export default function ResumePage() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -53,7 +53,7 @@ export default function ResumePage() {
       
       <SectionContainer paddingTop="medium" paddingBottom="xxlarge">
         {/* Education Section */}
-        <div style={{ marginBottom: `${spacing.large}px` }}>
+        <div style={{ marginBottom: spacing.large }}>
           <SectionHeader level="h3" marginBottom="medium">
             Education
           </SectionHeader>
@@ -63,9 +63,9 @@ export default function ResumePage() {
               key={index}
               style={{
                 display: 'grid',
-                gridTemplateColumns: '200px 1fr',
-                gap: `${spacing.medium}px`,
-                marginBottom: `${spacing.large}px`,
+                gridTemplateColumns: '12.5rem 1fr',
+                gap: spacing.medium,
+                marginBottom: spacing.large,
               }}
               className="resume-entry"
             >
@@ -89,7 +89,7 @@ export default function ResumePage() {
                     fontSize: typography.fontSize.h3,
                     fontWeight: typography.fontWeight.bold,
                     color: colors.text_primary,
-                    marginBottom: `${spacing.xs}px`,
+                    marginBottom: spacing.xs,
                   }}
                 >
                   {entry.title}
@@ -99,7 +99,7 @@ export default function ResumePage() {
                     fontSize: typography.fontSize.body,
                     color: colors.text_primary,
                     lineHeight: 1.6,
-                    marginBottom: entry.image ? `${spacing.small}px` : '0',
+                    marginBottom: entry.image ? spacing.small : '0',
                   }}
                 >
                   {entry.description}
@@ -110,8 +110,8 @@ export default function ResumePage() {
                     style={{
                       position: 'relative',
                       width: '100%',
-                      height: '300px',
-                      borderRadius: `${radius.base}px`,
+                      height: '18.75rem',
+                      borderRadius: radius.base,
                       overflow: 'hidden',
                       boxShadow: shadows.card,
                     }}
@@ -140,9 +140,9 @@ export default function ResumePage() {
               key={index}
               style={{
                 display: 'grid',
-                gridTemplateColumns: '200px 1fr',
-                gap: `${spacing.medium}px`,
-                marginBottom: `${spacing.large}px`,
+                gridTemplateColumns: '12.5rem 1fr',
+                gap: spacing.medium,
+                marginBottom: spacing.large,
               }}
               className="resume-entry"
             >
@@ -166,7 +166,7 @@ export default function ResumePage() {
                     fontSize: typography.fontSize.h3,
                     fontWeight: typography.fontWeight.bold,
                     color: colors.text_primary,
-                    marginBottom: `${spacing.xs}px`,
+                    marginBottom: spacing.xs,
                   }}
                 >
                   {entry.title}
@@ -176,7 +176,7 @@ export default function ResumePage() {
                     fontSize: typography.fontSize.body,
                     color: colors.text_primary,
                     lineHeight: 1.6,
-                    marginBottom: entry.image ? `${spacing.small}px` : '0',
+                    marginBottom: entry.image ? spacing.small : '0',
                   }}
                 >
                   {entry.description}
@@ -187,8 +187,8 @@ export default function ResumePage() {
                     style={{
                       position: 'relative',
                       width: '100%',
-                      height: '300px',
-                      borderRadius: `${radius.base}px`,
+                      height: '18.75rem',
+                      borderRadius: radius.base,
                       overflow: 'hidden',
                       boxShadow: shadows.card,
                     }}

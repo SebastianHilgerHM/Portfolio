@@ -26,7 +26,7 @@ const InterestCard = ({ id, title, description }: InterestCardProps) => {
         style={{
           fontSize: typography.fontSize.h3,
           fontWeight: typography.fontWeight.semibold,
-          marginBottom: `${spacing.small}px`,
+          marginBottom: spacing.small,
           color: colors.text_primary,
         }}
       >

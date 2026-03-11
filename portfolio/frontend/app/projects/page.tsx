@@ -103,21 +103,21 @@ export default function ProjectsPage() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
       <PageTitleSection title="My Projects" />
       
-      <SectionContainer paddingTop="medium" paddingBottom="xxlarge" maxWidth="1400px">
+      <SectionContainer paddingTop="medium" paddingBottom="xxlarge" maxWidth="87.5rem">
         {loading ? (
-          <div style={{ textAlign: 'center', padding: `${spacing.xxl}px` }}>
+          <div style={{ textAlign: 'center', padding: spacing.xxl }}>
             <p style={{ color: colors.text_secondary, fontSize: typography.fontSize.body }}>
               Loading projects...
             </p>
           </div>
         ) : error && projects.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: `${spacing.xxl}px` }}>
+          <div style={{ textAlign: 'center', padding: spacing.xxl }}>
             <p style={{ color: '#E57373', fontSize: typography.fontSize.body }}>
               {error}
             </p>
@@ -126,26 +126,27 @@ export default function ProjectsPage() {
           <div
             style={{
               display: 'flex',
-              gap: `${spacing.medium}px`,
+              gap: spacing.medium,
+              alignItems: 'flex-start',
             }}
             className="projects-grid"
           >
             {/* Column 1 */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: `${spacing.medium}px`, flex: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: spacing.medium, flex: 1 }}>
               {getColumnProjects(0).map((project, idx) => (
                 <ProjectGridCard key={`col1-${idx}`} {...project} />
               ))}
             </div>
 
             {/* Column 2 */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: `${spacing.medium}px`, flex: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: spacing.medium, flex: 1 }}>
               {getColumnProjects(1).map((project, idx) => (
                 <ProjectGridCard key={`col2-${idx}`} {...project} />
               ))}
             </div>
 
             {/* Column 3 */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: `${spacing.medium}px`, flex: 1 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: spacing.medium, flex: 1 }}>
               {getColumnProjects(2).map((project, idx) => (
                 <ProjectGridCard key={`col3-${idx}`} {...project} />
               ))}

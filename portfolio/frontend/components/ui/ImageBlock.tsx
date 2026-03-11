@@ -22,7 +22,7 @@ const ImageBlock = ({
   src,
   alt,
   width = '100%',
-  height = '420px',
+  height = '26.25rem',
   maxWidth,
   objectFit = 'cover',
   rounded = true,
@@ -33,32 +33,24 @@ const ImageBlock = ({
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        maxWidth: maxWidth || (typeof width === 'number' ? `${width}px` : width),
+        width: typeof width === 'number' ? `${width}px` : width,
+        height: typeof height === 'number' ? `${height}px` : height,
+        position: 'relative',
+        borderRadius: rounded ? radius.base : undefined,
+        overflow: rounded ? 'hidden' : undefined,
       }}
     >
-      <div
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={imageClass}
         style={{
-          maxWidth: maxWidth || (typeof width === 'number' ? `${width}px` : width),
-          width: typeof width === 'number' ? `${width}px` : width,
-          height: typeof height === 'number' ? `${height}px` : height,
-          position: 'relative',
-          borderRadius: rounded ? `${radius.base}px` : undefined,
-          overflow: rounded ? 'hidden' : undefined,
+          objectFit,
+          borderRadius: rounded ? radius.base : undefined,
         }}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className={imageClass}
-          style={{
-            objectFit,
-            borderRadius: rounded ? `${radius.base}px` : undefined,
-          }}
-        />
-      </div>
+      />
     </div>
   );
 };

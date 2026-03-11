@@ -26,7 +26,7 @@ const IntroductionSection = ({
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          columnGap: `${spacing.large}px`,
+          columngap: spacing.large,
           alignItems: 'center',
         }}
         className="introduction-grid"
@@ -35,18 +35,18 @@ const IntroductionSection = ({
         <ImageBlock
           src={imageUrl}
           alt="Portrait"
-          maxWidth="420px"
-          height="420px"
+          maxWidth="26.25rem"
+          height="26.25rem"
           objectFit="cover"
         />
 
         {/* Text Block */}
-        <Card style={{ maxWidth: '480px' }} className="text-block">
+        <Card style={{ maxWidth: '30rem' }} className="text-block">
           <h3
             style={{
               fontSize: typography.fontSize.h3,
               fontWeight: typography.fontWeight.semibold,
-              marginBottom: `${spacing.small}px`,
+              marginBottom: spacing.small,
               color: colors.text_primary,
             }}
           >

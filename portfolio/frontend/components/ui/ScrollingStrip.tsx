@@ -30,7 +30,7 @@ const ScrollingStrip = ({
         className={className}
         style={{
           display: 'flex',
-          gap: `${gapMap[gap]}px`,
+          gap: gapMap[gap],
         }}
       >
         {[0, 1].map((groupIndex) => (
@@ -38,7 +38,7 @@ const ScrollingStrip = ({
             key={groupIndex}
             style={{
               display: 'flex',
-              gap: `${gapMap[gap]}px`,
+              gap: gapMap[gap],
               flexShrink: 0,
             }}
           >

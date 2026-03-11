@@ -48,7 +48,7 @@ const ProjectCard = ({
               fontSize: typography.fontSize.h3,
               fontWeight: typography.fontWeight.semibold,
               color: colors.text_primary,
-              marginBottom: `${spacing.xs}px`,
+              marginBottom: spacing.xs,
             }}
           >
             {title}
@@ -57,7 +57,7 @@ const ProjectCard = ({
             style={{
               fontSize: typography.fontSize.body,
               color: colors.text_secondary,
-              marginBottom: `${spacing.small}px`,
+              marginBottom: spacing.small,
               lineHeight: typography.lineHeight.normal,
             }}
           >
@@ -86,7 +86,7 @@ const ProjectCard = ({
     <ImageBlock
       src={imageUrl}
       alt={title}
-      height="350px"
+      height="21.875rem"
       objectFit="contain"
       useDropShadow
     />
@@ -98,7 +98,7 @@ const ProjectCard = ({
       style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gap: `${spacing.medium}px`,
+        gap: spacing.medium,
         alignItems: 'center',
       }}
     >

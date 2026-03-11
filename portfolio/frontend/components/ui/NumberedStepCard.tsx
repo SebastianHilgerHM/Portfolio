@@ -32,7 +32,7 @@ const NumberedStepCard = ({
   padding = 'small',
   titleSize = 'h4',
   layout = 'stacked',
-  numberWidth = '72px',
+  numberWidth = '4.5rem',
 }: NumberedStepCardProps) => {
   const titleAndText = (
     <>
@@ -41,7 +41,7 @@ const NumberedStepCard = ({
           fontSize: typography.fontSize[titleSize],
           fontWeight: typography.fontWeight.bold,
           color: colors.text_primary,
-          marginBottom: `${spacing.xs}px`,
+          marginBottom: spacing.xs,
         }}
       >
         {title}
@@ -63,7 +63,7 @@ const NumberedStepCard = ({
       <div
         style={{
           display: 'flex',
-          gap: `${spacing.medium}px`,
+          gap: spacing.medium,
           alignItems: 'flex-start',
         }}
       >
@@ -89,7 +89,7 @@ const NumberedStepCard = ({
         style={{
           ...numberStyles,
           display: 'block',
-          marginBottom: `${spacing.xs}px`,
+          marginBottom: spacing.xs,
         }}
       >
         {number}

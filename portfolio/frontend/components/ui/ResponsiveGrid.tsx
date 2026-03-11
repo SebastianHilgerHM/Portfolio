@@ -35,19 +35,12 @@ const ResponsiveGrid = ({
 
   return (
     <>
-      <style suppressHydrationWarning>{`
-        @media (max-width: ${breakpoint}px) {
-          .${gridClass} {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
       <div
         className={gridClass}
         style={{
           display: 'grid',
           gridTemplateColumns: columns,
-          gap: `${gapMap[gap]}px`,
+          gap: gapMap[gap],
           alignItems,
           ...style,
         }}

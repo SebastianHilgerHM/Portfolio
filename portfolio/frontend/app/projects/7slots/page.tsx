@@ -18,7 +18,7 @@ export default function SevenSlotsProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -31,7 +31,7 @@ export default function SevenSlotsProject() {
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
             lineHeight: 1.05,
-            marginBottom: `${spacing.xs}px`,
+            marginBottom: spacing.xs,
           }}
         >
           7Clash
@@ -50,7 +50,7 @@ export default function SevenSlotsProject() {
 
       {/* Hero Image */}
       <SectionContainer paddingTop="small" paddingBottom="medium">
-        <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+        <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
           <Image
             src="/images/page_7clash/7Clash_Main.png"
             alt="7Clash gambling platform interface"
@@ -63,15 +63,15 @@ export default function SevenSlotsProject() {
 
       {/* Context */}
       <SectionContainer paddingTop="large" paddingBottom="medium">
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="stretch" breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024}>
           <Card>
-            <div style={{ display: 'flex', gap: `${spacing.medium}px`, alignItems: 'stretch', height: '100%' }}>
+            <div style={{ display: 'flex', gap: spacing.medium, alignItems: 'stretch', height: '100%' }}>
               <div
                 style={{
-                  width: '4px',
+                  width: '0.25rem',
                   flexShrink: 0,
                   backgroundColor: colors.accent,
-                  borderRadius: '2px',
+                  borderRadius: '0.125rem',
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -80,7 +80,7 @@ export default function SevenSlotsProject() {
                     fontSize: typography.fontSize.h3,
                     fontWeight: typography.fontWeight.bold,
                     color: colors.accent,
-                    marginBottom: `${spacing.xs}px`,
+                    marginBottom: spacing.xs,
                   }}
                 >
                   The Course
@@ -99,13 +99,13 @@ export default function SevenSlotsProject() {
           </Card>
 
           <Card>
-            <div style={{ display: 'flex', gap: `${spacing.medium}px`, alignItems: 'stretch', height: '100%' }}>
+            <div style={{ display: 'flex', gap: spacing.medium, alignItems: 'stretch', height: '100%' }}>
               <div
                 style={{
-                  width: '4px',
+                  width: '0.25rem',
                   flexShrink: 0,
                   backgroundColor: colors.accent,
-                  borderRadius: '2px',
+                  borderRadius: '0.125rem',
                 }}
               />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -114,7 +114,7 @@ export default function SevenSlotsProject() {
                     fontSize: typography.fontSize.h3,
                     fontWeight: typography.fontWeight.bold,
                     color: colors.accent,
-                    marginBottom: `${spacing.xs}px`,
+                    marginBottom: spacing.xs,
                   }}
                 >
                   The Product
@@ -140,7 +140,7 @@ export default function SevenSlotsProject() {
           Implementation and Hardening
         </SectionHeader>
 
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024}>
           <Card>
             <ImportantText marginBottom="small">
               Building the Product
@@ -156,7 +156,7 @@ export default function SevenSlotsProject() {
             </p>
           </Card>
 
-          <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+          <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
             <Image
               src="/images/page_7clash/7Clash_Result.png"
               alt="7Clash result screen"
@@ -167,7 +167,7 @@ export default function SevenSlotsProject() {
           </div>
         </ResponsiveGrid>
 
-        <div style={{ marginTop: `${spacing.large}px` }}>
+        <div style={{ marginTop: spacing.large }}>
           <Card>
             <ImportantText marginBottom="small">
               Attack Phase
@@ -187,7 +187,7 @@ export default function SevenSlotsProject() {
 
       {/* Closing image */}
       <SectionContainer paddingTop="medium" paddingBottom="medium">
-        <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+        <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
           <Image
             src="/images/page_7clash/7Clash_Attack.png"
             alt="7Clash attack phase"
@@ -204,7 +204,7 @@ export default function SevenSlotsProject() {
           The Site
         </SectionHeader>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: `${spacing.small}px` }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: spacing.small }}>
           {[
             { src: '/images/page_7clash/7Clash_Shop.png', alt: '7Clash shop screen' },
             { src: '/images/page_7clash/7Clash_Heist.png', alt: '7Clash heist game' },
@@ -214,7 +214,7 @@ export default function SevenSlotsProject() {
               key={idx}
               style={{
                 width: '100%',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
                 overflow: 'hidden',
               }}
             >

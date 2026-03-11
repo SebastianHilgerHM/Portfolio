@@ -11,17 +11,17 @@ export const colors = {
 };
 
 export const spacing = {
-  xs: 8,
-  small: 24,
-  medium: 32,
-  large: 64,
-  xxl: 120,
+  xs: "0.5rem",     // 8px
+  small: "1.5rem",  // 24px
+  medium: "2rem",   // 32px
+  large: "4rem",    // 64px
+  xxl: "7.5rem",    // 120px
 };
 
 export const radius = {
   none: 0,
-  base: 8,
-  large: 16,
+  base: "0.5rem",   // 8px
+  large: "1rem",    // 16px
 };
 
 export const zIndex = {
@@ -45,12 +45,12 @@ export const typography = {
     mono: "'Oxygen', monospace",
   },
   fontSize: {
-    h1: "96px",
-    h2: "60px",
-    h3: "34px",
-    h4: "24px",
-    body: "16px",
-    body_small: "14px",
+    h1: "6rem",        // 96px
+    h2: "3.75rem",     // 60px
+    h3: "2.125rem",    // 34px
+    h4: "1.5rem",      // 24px
+    body: "1rem",      // 16px
+    body_small: "0.875rem",  // 14px
   },
   fontWeight: {
     regular: 400,

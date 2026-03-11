@@ -36,8 +36,8 @@ const Card = ({
 
   const baseStyles: React.CSSProperties = {
     backgroundColor: colors.primary,
-    borderRadius: `${radius.base}px`,
-    padding: `${paddingMap[padding]}px`,
+    borderRadius: radius.base,
+    padding: paddingMap[padding],
     boxShadow: shadows.card,
     transition: `all ${motion.duration.normal} ${motion.easing.standard}`,
   };

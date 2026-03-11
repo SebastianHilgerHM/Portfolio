@@ -16,8 +16,8 @@ const PageTitleSection = ({ title, subtitle }: PageTitleSectionProps) => {
     <section
       style={{
         width: '100%',
-        paddingTop: `${spacing.large}px`,
-        paddingBottom: `${spacing.medium}px`,
+        paddingTop: spacing.large,
+        paddingBottom: spacing.medium,
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -25,10 +25,10 @@ const PageTitleSection = ({ title, subtitle }: PageTitleSectionProps) => {
     >
       <div
         style={{
-          maxWidth: '1200px',
+          maxWidth: '75rem',
           margin: '0 auto',
-          paddingLeft: `${spacing.xxl}px`,
-          paddingRight: `${spacing.xxl}px`,
+          paddingLeft: spacing.xxl,
+          paddingRight: spacing.xxl,
           position: 'relative',
           zIndex: zIndex.base + 1,
         }}
@@ -45,8 +45,8 @@ const PageTitleSection = ({ title, subtitle }: PageTitleSectionProps) => {
               fontSize: typography.fontSize.h1,
               fontWeight: typography.fontWeight.bold,
               color: colors.text_primary,
-              maxWidth: '800px',
-              marginBottom: subtitle ? `${spacing.xs}px` : undefined,
+              maxWidth: '50rem',
+              marginBottom: subtitle ? spacing.xs : undefined,
             }}
             className="page-title"
           >
@@ -58,7 +58,7 @@ const PageTitleSection = ({ title, subtitle }: PageTitleSectionProps) => {
                 fontSize: typography.fontSize.h3,
                 color: colors.text_primary,
                 fontWeight: typography.fontWeight.regular,
-                maxWidth: '800px',
+                maxWidth: '50rem',
               }}
               className="page-subtitle"
             >

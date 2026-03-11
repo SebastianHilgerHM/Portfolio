@@ -58,7 +58,7 @@ const CuriositySection = ({
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: `${spacing.small}px`,
+          gap: spacing.small,
           alignItems: 'stretch',
         }}
         className="curiosity-grid"
@@ -69,7 +69,7 @@ const CuriositySection = ({
             style={{
               fontSize: typography.fontSize.h3,
               fontWeight: typography.fontWeight.semibold,
-              marginBottom: `${spacing.small}px`,
+              marginBottom: spacing.small,
               color: colors.text_primary,
             }}
           >

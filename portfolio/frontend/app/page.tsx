@@ -42,7 +42,7 @@ export default function Home() {
         minHeight: '100vh',
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
         backgroundPosition: '0 0',
         overflowX: 'hidden',
         width: '100%',
@@ -58,17 +58,17 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: `${spacing.xxl}px ${spacing.medium}px`,
+          padding: `${spacing.xxl} ${spacing.medium}`,
           position: 'relative',
         }}
       >
         <div
           style={{
-            maxWidth: '1400px',
+            maxWidth: '87.5rem',
             width: '100%',
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gap: `${spacing.xxl}px`,
+            gap: spacing.xxl,
             alignItems: 'center',
           }}
           className="hero-layout"
@@ -78,20 +78,20 @@ export default function Home() {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: `${spacing.medium}px`,
+              gap: spacing.medium,
             }}
           >
             <div
               style={{
                 display: 'inline-block',
-                padding: `${spacing.xs}px ${spacing.small}px`,
+                padding: `${spacing.xs} ${spacing.small}`,
                 backgroundColor: colors.accent,
                 color: colors.background,
                 fontSize: typography.fontSize.body_small,
                 fontWeight: typography.fontWeight.bold,
-                letterSpacing: '2px',
+                letterSpacing: '0.125rem',
                 width: 'fit-content',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             >
               PORTFOLIO
@@ -99,7 +99,7 @@ export default function Home() {
             
             <h1
               style={{
-                fontSize: '72px',
+                fontSize: '4.5rem',
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
                 lineHeight: 1.1,
@@ -116,7 +116,7 @@ export default function Home() {
                 fontSize: typography.fontSize.h4,
                 color: colors.text_secondary,
                 lineHeight: typography.lineHeight.normal,
-                maxWidth: '500px',
+                maxWidth: '31.25rem',
               }}
             >
               Crafting digital experiences that blend creative design with functional code. 
@@ -126,21 +126,21 @@ export default function Home() {
             <div
               style={{
                 display: 'flex',
-                gap: `${spacing.small}px`,
-                marginTop: `${spacing.small}px`,
+                gap: spacing.small,
+                marginTop: spacing.small,
               }}
             >
               <a
                 href="/projects"
                 className="hero-button-primary"
                 style={{
-                  padding: `${spacing.small}px ${spacing.medium}px`,
+                  padding: `${spacing.small} ${spacing.medium}`,
                   backgroundColor: colors.accent,
                   color: colors.background,
                   fontSize: typography.fontSize.body,
                   fontWeight: typography.fontWeight.medium,
                   textDecoration: 'none',
-                  borderRadius: `${radius.base}px`,
+                  borderRadius: radius.base,
                   display: 'inline-block',
                 }}
               >
@@ -151,14 +151,14 @@ export default function Home() {
                 href="/contact"
                 className="hero-button-secondary"
                 style={{
-                  padding: `${spacing.small}px ${spacing.medium}px`,
+                  padding: `${spacing.small} ${spacing.medium}`,
                   backgroundColor: 'transparent',
                   color: colors.text_primary,
                   fontSize: typography.fontSize.body,
                   fontWeight: typography.fontWeight.medium,
                   textDecoration: 'none',
-                  borderRadius: `${radius.base}px`,
-                  border: `2px solid ${colors.text_secondary}`,
+                  borderRadius: radius.base,
+                  border: `0.125rem solid ${colors.text_secondary}`,
                   display: 'inline-block',
                 }}
               >
@@ -180,7 +180,7 @@ export default function Home() {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '500px',
+                maxWidth: '31.25rem',
                 aspectRatio: '1',
               }}
             >
@@ -195,7 +195,7 @@ export default function Home() {
                   width: '80%',
                   height: '80%',
                   borderRadius: '50%',
-                  border: `3px solid ${colors.accent}`,
+                  border: `0.1875rem solid ${colors.accent}`,
                   opacity: 0.2,
                 }}
               />
@@ -211,7 +211,7 @@ export default function Home() {
                   width: '90%',
                   height: '90%',
                   borderRadius: '50%',
-                  border: `2px solid transparent`,
+                  border: `0.125rem solid transparent`,
                   borderTopColor: colors.accent,
                   borderRightColor: colors.accent,
                 }}
@@ -229,13 +229,13 @@ export default function Home() {
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
                   gridTemplateRows: '1fr 1fr',
-                  gap: `${spacing.small}px`,
+                  gap: spacing.small,
                 }}
               >
-                <div style={{ backgroundColor: colors.accent, borderRadius: `${radius.base}px` }} />
-                <div style={{ backgroundColor: colors.primary, borderRadius: `${radius.base}px` }} />
-                <div style={{ backgroundColor: colors.primary, borderRadius: `${radius.base}px` }} />
-                <div style={{ backgroundColor: colors.accent, borderRadius: `${radius.base}px` }} />
+                <div style={{ backgroundColor: colors.accent, borderRadius: radius.base }} />
+                <div style={{ backgroundColor: colors.primary, borderRadius: radius.base }} />
+                <div style={{ backgroundColor: colors.primary, borderRadius: radius.base }} />
+                <div style={{ backgroundColor: colors.accent, borderRadius: radius.base }} />
               </div>
 
               {/* Orbiting Skills */}
@@ -266,7 +266,7 @@ export default function Home() {
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      gap: '4px',
+                      gap: '0.25rem',
                       animationDelay: `${delay}ms`,
                     }}
                   >
@@ -277,7 +277,7 @@ export default function Home() {
                         color: colors.text_primary,
                         whiteSpace: 'nowrap',
                         textTransform: 'uppercase',
-                        letterSpacing: '1px',
+                        letterSpacing: '0.0625rem',
                       }}
                     >
                       {skill.name}
@@ -285,15 +285,15 @@ export default function Home() {
                     <div
                       style={{
                         display: 'flex',
-                        gap: '3px',
+                        gap: '0.1875rem',
                       }}
                     >
                       {[1, 2, 3, 4, 5].map((dot) => (
                         <div
                           key={dot}
                           style={{
-                            width: '6px',
-                            height: '6px',
+                            width: '0.375rem',
+                            height: '0.375rem',
                             borderRadius: '50%',
                             backgroundColor: dot <= skill.level ? colors.accent : colors.text_secondary,
                             opacity: dot <= skill.level ? 1 : 0.2,
@@ -316,7 +316,7 @@ export default function Home() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: `${spacing.large}px`,
+            gap: spacing.large,
           }}
         >
           {projects.map((project, index) => (

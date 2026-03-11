@@ -19,7 +19,7 @@ const TechStack = ({
     <div
       style={{
         display: 'flex',
-        gap: `${spacing.small}px`,
+        gap: spacing.small,
         flexWrap: 'wrap',
         justifyContent: justify,
       }}
@@ -28,9 +28,9 @@ const TechStack = ({
         <span
           key={tech}
           style={{
-            padding: `${spacing.xs}px ${spacing.small}px`,
-            border: `1px solid ${colors.text_secondary}`,
-            borderRadius: `${spacing.xs}px`,
+            padding: `${spacing.xs} ${spacing.small}`,
+            border: `0.0625rem solid ${colors.text_secondary}`,
+            borderRadius: spacing.xs,
             fontSize: typography.fontSize.body,
             color: colors.text_primary,
             fontFamily: typography.fontFamily.mono,

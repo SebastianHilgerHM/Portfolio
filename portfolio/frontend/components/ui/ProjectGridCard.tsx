@@ -20,8 +20,9 @@ const ProjectGridCard = ({ title, image, link }: ProjectGridCardProps) => {
     <div
       style={{
         position: 'relative',
-        paddingBottom: `${spacing.large}px`,
-        paddingRight: `${spacing.large}px`,
+        paddingBottom: spacing.large,
+        paddingRight: spacing.large,
+        alignSelf: 'flex-start',
       }}
     >
       {/* Image Card */}
@@ -56,7 +57,7 @@ const ProjectGridCard = ({ title, image, link }: ProjectGridCardProps) => {
           bottom: 0,
           right: 0,
           width: '70%',
-          padding: `${spacing.xs}px`,
+          padding: spacing.xs,
         }}
       >
         <h3
@@ -64,7 +65,7 @@ const ProjectGridCard = ({ title, image, link }: ProjectGridCardProps) => {
             fontSize: typography.fontSize.h4,
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
-            marginBottom: `${spacing.xs}px`,
+            marginBottom: spacing.xs,
           }}
         >
           {title}

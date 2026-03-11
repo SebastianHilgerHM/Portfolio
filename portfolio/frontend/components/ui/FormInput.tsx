@@ -29,24 +29,24 @@ const FormInput = ({
 }: FormInputProps) => {
   const inputStyles: React.CSSProperties = {
     width: '100%',
-    padding: `${spacing.xs}px`,
+    padding: spacing.xs,
     backgroundColor: colors.background,
-    border: `1px solid ${error ? '#ff4444' : colors.text_secondary}`,
-    borderRadius: `${radius.base}px`,
+    border: `0.0625rem solid ${error ? '#ff4444' : colors.text_secondary}`,
+    borderRadius: radius.base,
     color: colors.text_primary,
     fontSize: typography.fontSize.body,
     outline: 'none',
   };
 
   return (
-    <div style={{ marginBottom: `${spacing.small}px` }}>
+    <div style={{ marginBottom: spacing.small }}>
       <label
         htmlFor={id}
         style={{
           display: 'block',
           fontSize: typography.fontSize.body_small,
           color: colors.text_primary,
-          marginBottom: '4px',
+          marginBottom: '0.25rem',
         }}
       >
         {label}
@@ -80,7 +80,7 @@ const FormInput = ({
             fontSize: typography.fontSize.body_small,
             color: '#ff4444',
             display: 'block',
-            marginTop: '4px',
+            marginTop: '0.25rem',
           }}
         >
           {error}

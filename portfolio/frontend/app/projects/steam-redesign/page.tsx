@@ -42,7 +42,7 @@ export default function SteamRedesignProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -65,7 +65,7 @@ export default function SteamRedesignProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>
@@ -77,11 +77,11 @@ export default function SteamRedesignProject() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: `${spacing.medium}px`,
+            gap: spacing.medium,
           }}
         >
           <Card>
-            <ResponsiveGrid columns="300px 1fr" gap="medium" alignItems="start" breakpoint={768}>
+            <ResponsiveGrid columns="18.75rem 1fr" gap="medium" alignItems="start" breakpoint={768}>
               <h2
                 style={{
                   fontSize: typography.fontSize.h2,
@@ -119,17 +119,17 @@ export default function SteamRedesignProject() {
             flexDirection: 'column',
             gap: 0,
             position: 'relative',
-            paddingLeft: `${spacing.large}px`,
+            paddingLeft: spacing.large,
           }}
         >
           {/* Vertical line */}
           <div
             style={{
               position: 'absolute',
-              left: '18px',
+              left: '1.125rem',
               top: 0,
               bottom: 0,
-              width: '2px',
+              width: '0.125rem',
               backgroundColor: colors.text_primary,
               opacity: 0.3,
             }}
@@ -140,9 +140,9 @@ export default function SteamRedesignProject() {
               key={step.number}
               style={{
                 display: 'grid',
-                gridTemplateColumns: '80px 1fr',
-                gap: `${spacing.medium}px`,
-                paddingBottom: index < timelineSteps.length - 1 ? `${spacing.large}px` : 0,
+                gridTemplateColumns: '5rem 1fr',
+                gap: spacing.medium,
+                paddingBottom: index < timelineSteps.length - 1 ? spacing.large : 0,
                 position: 'relative',
               }}
               className="timeline-step"
@@ -151,13 +151,13 @@ export default function SteamRedesignProject() {
               <div
                 style={{
                   position: 'absolute',
-                  left: `-${spacing.large - 10}px`,
-                  top: '6px',
-                  width: '16px',
-                  height: '16px',
+                  left: 'calc(-4rem + 0.625rem)',
+                  top: '0.375rem',
+                  width: '1rem',
+                  height: '1rem',
                   borderRadius: '50%',
                   backgroundColor: colors.accent,
-                  border: `3px solid ${colors.background}`,
+                  border: `0.1875rem solid ${colors.background}`,
                 }}
               />
 
@@ -178,7 +178,7 @@ export default function SteamRedesignProject() {
                     fontSize: typography.fontSize.h3,
                     fontWeight: typography.fontWeight.bold,
                     color: colors.text_primary,
-                    marginBottom: `${spacing.xs}px`,
+                    marginBottom: spacing.xs,
                   }}
                 >
                   {step.title}
@@ -202,7 +202,7 @@ export default function SteamRedesignProject() {
           style={{
             display: 'flex',
             alignItems: 'flex-start',
-            marginTop: `${spacing.xxl}px`,
+            marginTop: spacing.xxl,
           }}
           className="steam-overlap-images"
         >
@@ -222,7 +222,7 @@ export default function SteamRedesignProject() {
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -233,7 +233,7 @@ export default function SteamRedesignProject() {
               width: '55%',
               flexShrink: 0,
               marginLeft: '-10%',
-              marginTop: `${spacing.xxl}px`,
+              marginTop: spacing.xxl,
               zIndex: 2,
             }}
           >
@@ -245,7 +245,7 @@ export default function SteamRedesignProject() {
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -283,7 +283,7 @@ export default function SteamRedesignProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 {principle.title}
@@ -308,7 +308,7 @@ export default function SteamRedesignProject() {
           style={{
             width: '100%',
             position: 'relative',
-            marginBottom: `${spacing.large}px`,
+            marginBottom: spacing.large,
           }}
         >
           <Image
@@ -319,7 +319,7 @@ export default function SteamRedesignProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>

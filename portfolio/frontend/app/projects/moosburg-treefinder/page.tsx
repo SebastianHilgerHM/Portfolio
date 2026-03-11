@@ -18,7 +18,7 @@ export default function MoosburgTreefinderProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -31,7 +31,7 @@ export default function MoosburgTreefinderProject() {
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
             lineHeight: 1.05,
-            marginBottom: `${spacing.xs}px`,
+            marginBottom: spacing.xs,
           }}
         >
           Moosburg Treefinder
@@ -50,7 +50,7 @@ export default function MoosburgTreefinderProject() {
 
       {/* Hero Image */}
       <SectionContainer paddingTop="small" paddingBottom="medium">
-        <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+        <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
           <Image
             src="/images/page_treefinder/Treefinder_Main.png"
             alt="Treefinder interface overview"
@@ -69,7 +69,7 @@ export default function MoosburgTreefinderProject() {
               fontSize: typography.fontSize.body,
               color: colors.text_secondary,
               lineHeight: typography.lineHeight.loose,
-              marginBottom: `${spacing.medium}px`,
+              marginBottom: spacing.medium,
             }}
           >
             &ldquo;Moosburg Treefinder&rdquo; started as a collaboration with the city of Moosburg an der Isar. The project came out of a university course where city representatives presented real challenges, and we chose a problem focused on climate-appropriate tree planting and navigating local replacement regulations.
@@ -92,7 +92,7 @@ export default function MoosburgTreefinderProject() {
           Solution
         </SectionHeader>
 
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024}>
           <Card>
             <p
               style={{
@@ -105,7 +105,7 @@ export default function MoosburgTreefinderProject() {
             </p>
           </Card>
 
-          <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+          <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
             <Image
               src="/images/page_treefinder/Treefinder_Info.png"
               alt="Treefinder info screen"
@@ -124,7 +124,7 @@ export default function MoosburgTreefinderProject() {
         </SectionHeader>
 
         {/* Domain research */}
-        <Card style={{ marginBottom: `${spacing.medium}px` }}>
+        <Card style={{ marginBottom: spacing.medium }}>
           <ImportantText marginBottom="small">
             Domain Research
           </ImportantText>
@@ -140,7 +140,7 @@ export default function MoosburgTreefinderProject() {
         </Card>
 
         {/* Design to development */}
-        <Card style={{ marginBottom: `${spacing.large}px` }}>
+        <Card style={{ marginBottom: spacing.large }}>
           <ImportantText marginBottom="small">
             Design to Development
           </ImportantText>
@@ -156,7 +156,7 @@ export default function MoosburgTreefinderProject() {
         </Card>
 
         {/* Closing image */}
-        <div style={{ width: '100%', borderRadius: `${radius.base}px`, overflow: 'hidden' }}>
+        <div style={{ width: '100%', borderRadius: radius.base, overflow: 'hidden' }}>
           <Image
             src="/images/page_treefinder/Treefinder_Research.png"
             alt="Treefinder research overview"
@@ -183,7 +183,7 @@ export default function MoosburgTreefinderProject() {
               key={idx}
               style={{
                 width: '100%',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
                 overflow: 'hidden',
               }}
             >

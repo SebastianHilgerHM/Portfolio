@@ -18,7 +18,7 @@ export default function ListeningWrappedProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -31,7 +31,7 @@ export default function ListeningWrappedProject() {
             fontWeight: typography.fontWeight.bold,
             color: colors.text_primary,
             lineHeight: 1.05,
-            marginBottom: `${spacing.xs}px`,
+            marginBottom: spacing.xs,
           }}
         >
           Listening Wrapped
@@ -53,7 +53,7 @@ export default function ListeningWrappedProject() {
         <div
           style={{
             width: '100%',
-            borderRadius: `${radius.base}px`,
+            borderRadius: radius.base,
             overflow: 'hidden',
           }}
         >
@@ -77,7 +77,7 @@ export default function ListeningWrappedProject() {
           className="keyword-row"
           style={{
             display: 'flex',
-            gap: `${spacing.small}px`,
+            gap: spacing.small,
             justifyContent: 'center',
             flexWrap: 'wrap',
           }}
@@ -86,10 +86,10 @@ export default function ListeningWrappedProject() {
             <span
               key={word}
               style={{
-                padding: `${spacing.xs}px ${spacing.medium}px`,
+                padding: `${spacing.xs} ${spacing.medium}`,
                 backgroundColor: colors.primary,
-                borderRadius: `${radius.base}px`,
-                border: `1px solid ${colors.accent}`,
+                borderRadius: radius.base,
+                border: `0.0625rem solid ${colors.accent}`,
                 color: colors.accent,
                 fontSize: typography.fontSize.h4,
                 fontFamily: typography.fontFamily.mono,
@@ -112,7 +112,7 @@ export default function ListeningWrappedProject() {
               color: colors.text_primary,
               lineHeight: typography.lineHeight.loose,
               textAlign: 'center',
-              maxWidth: '900px',
+              maxWidth: '56.25rem',
               margin: '0 auto',
             }}
           >
@@ -124,13 +124,13 @@ export default function ListeningWrappedProject() {
       {/* ── Focus — accent bar + card ── */}
       <SectionContainer paddingTop="large" paddingBottom="xxlarge">
         <Card>
-          <div style={{ display: 'flex', gap: `${spacing.medium}px`, alignItems: 'stretch' }}>
+          <div style={{ display: 'flex', gap: spacing.medium, alignItems: 'stretch' }}>
             <div
               style={{
-                width: '4px',
+                width: '0.25rem',
                 flexShrink: 0,
                 backgroundColor: colors.accent,
-                borderRadius: '2px',
+                borderRadius: '0.125rem',
               }}
             />
             <div>
@@ -139,7 +139,7 @@ export default function ListeningWrappedProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.accent,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 Beyond &ldquo;Top Artists&rdquo;
@@ -175,7 +175,7 @@ export default function ListeningWrappedProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
           {/* Floating card overlapping bottom-right */}
@@ -183,9 +183,9 @@ export default function ListeningWrappedProject() {
             className="floating-card"
             style={{
               position: 'absolute',
-              bottom: `-${spacing.large}px`,
-              right: `${spacing.medium}px`,
-              maxWidth: '420px',
+              bottom: `-${spacing.large}`,
+              right: spacing.medium,
+              maxWidth: '26.25rem',
             }}
           >
             <Card padding="medium">
@@ -194,7 +194,7 @@ export default function ListeningWrappedProject() {
                   fontSize: typography.fontSize.h3,
                   fontWeight: typography.fontWeight.bold,
                   color: colors.text_primary,
-                  marginBottom: `${spacing.xs}px`,
+                  marginBottom: spacing.xs,
                 }}
               >
                 3D Vinyl Anchor
@@ -213,14 +213,14 @@ export default function ListeningWrappedProject() {
         </div>
 
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
-        <ResponsiveGrid columns="1fr 1fr" gap="medium" alignItems="stretch" breakpoint={768}>
+        <ResponsiveGrid columns="1fr 1fr" gap="medium" alignItems="start" breakpoint={768}>
           <Card padding="large">
             <h3
               style={{
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.xs}px`,
+                marginBottom: spacing.xs,
               }}
             >
               Minimal Charts, Maximum Feel
@@ -237,7 +237,7 @@ export default function ListeningWrappedProject() {
           </Card>
           <div
             style={{
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
               overflow: 'hidden',
             }}
           >
@@ -262,7 +262,7 @@ export default function ListeningWrappedProject() {
         <div
           style={{
             width: '100%',
-            borderRadius: `${radius.base}px`,
+            borderRadius: radius.base,
             overflow: 'hidden',
           }}
         >

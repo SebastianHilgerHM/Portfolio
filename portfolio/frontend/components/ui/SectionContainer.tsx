@@ -20,7 +20,7 @@ const SectionContainer = ({
   children,
   paddingTop = 'medium',
   paddingBottom = 'medium',
-  maxWidth = '1200px',
+  maxWidth = '75rem',
   className = '',
   id,
 }: SectionContainerProps) => {
@@ -36,8 +36,8 @@ const SectionContainer = ({
     <section
       style={{
         width: '100%',
-        paddingTop: `${paddingMap[paddingTop]}px`,
-        paddingBottom: `${paddingMap[paddingBottom]}px`,
+        paddingTop: paddingMap[paddingTop],
+        paddingBottom: paddingMap[paddingBottom],
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -48,8 +48,8 @@ const SectionContainer = ({
         style={{
           maxWidth,
           margin: '0 auto',
-          paddingLeft: `${spacing.medium}px`,
-          paddingRight: `${spacing.medium}px`,
+          paddingLeft: spacing.medium,
+          paddingRight: spacing.medium,
           position: 'relative',
           zIndex: zIndex.base + 1,
         }}

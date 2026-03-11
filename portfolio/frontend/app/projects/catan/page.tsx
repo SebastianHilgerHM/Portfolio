@@ -19,7 +19,7 @@ export default function CatanProject() {
         backgroundColor: colors.background,
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
       }}
     >
       <HeaderSection />
@@ -33,7 +33,7 @@ export default function CatanProject() {
           style={{
             width: '100%',
             position: 'relative',
-            marginBottom: `${spacing.xxl}px`,
+            marginBottom: spacing.xxl,
           }}
         >
           <Image
@@ -44,7 +44,7 @@ export default function CatanProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>
@@ -58,7 +58,7 @@ export default function CatanProject() {
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.bold,
                 color: colors.text_primary,
-                marginBottom: `${spacing.small}px`,
+                marginBottom: spacing.small,
               }}
             >
               Recreating Catan in a Digital Format
@@ -78,8 +78,8 @@ export default function CatanProject() {
           <div
             style={{
               position: 'relative',
-              height: '400px',
-              borderRadius: `${radius.base}px`,
+              height: '25rem',
+              borderRadius: radius.base,
               overflow: 'hidden',
             }}
           >
@@ -89,7 +89,7 @@ export default function CatanProject() {
               fill
               style={{
                 objectFit: 'cover',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -102,20 +102,20 @@ export default function CatanProject() {
           Role &amp; Workflow
         </SectionHeader>
 
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" breakpoint={1024}>
           {/* Left Column - Images Stacked */}
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: `${spacing.large}px`,
+              gap: spacing.large,
             }}
           >
             <div
               style={{
                 position: 'relative',
                 width: '100%',
-                height: '400px',
+                height: '25rem',
               }}
             >
               <Image
@@ -124,7 +124,7 @@ export default function CatanProject() {
                 fill
                 style={{
                   objectFit: 'cover',
-                  borderRadius: `${radius.base}px`,
+                  borderRadius: radius.base,
                 }}
               />
             </div>
@@ -132,7 +132,7 @@ export default function CatanProject() {
               style={{
                 position: 'relative',
                 width: '100%',
-                height: '400px',
+                height: '25rem',
               }}
             >
               <Image
@@ -141,7 +141,7 @@ export default function CatanProject() {
                 fill
                 style={{
                   objectFit: 'cover',
-                  borderRadius: `${radius.base}px`,
+                  borderRadius: radius.base,
                 }}
               />
             </div>
@@ -201,8 +201,8 @@ export default function CatanProject() {
               key={name}
               style={{
                 position: 'relative',
-                width: '300px',
-                height: '300px',
+                width: '18.75rem',
+                height: '18.75rem',
                 flexShrink: 0,
               }}
             >
@@ -212,7 +212,7 @@ export default function CatanProject() {
                 fill
                 style={{
                   objectFit: 'cover',
-                  borderRadius: `${radius.base}px`,
+                  borderRadius: radius.base,
                 }}
               />
             </div>
@@ -223,7 +223,7 @@ export default function CatanProject() {
       {/* Additional Section - Text Left, Image Right + Full Width Image */}
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
         {/* Two Column Layout */}
-        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="center" style={{ marginBottom: `${spacing.xxl}px` }} breakpoint={1024}>
+        <ResponsiveGrid columns="1fr 1fr" gap="large" alignItems="start" style={{ marginBottom: spacing.xxl }} breakpoint={1024}>
           {/* Left Column - Text Cards in Staggered Layout */}
           <StaggeredCards
             items={[
@@ -261,7 +261,7 @@ export default function CatanProject() {
             style={{
               position: 'relative',
               width: '100%',
-              height: '500px',
+              height: '31.25rem',
             }}
           >
             <Image
@@ -270,7 +270,7 @@ export default function CatanProject() {
               fill
               style={{
                 objectFit: 'cover',
-                borderRadius: `${radius.base}px`,
+                borderRadius: radius.base,
               }}
             />
           </div>
@@ -291,7 +291,7 @@ export default function CatanProject() {
             style={{
               width: '100%',
               height: 'auto',
-              borderRadius: `${radius.base}px`,
+              borderRadius: radius.base,
             }}
           />
         </div>

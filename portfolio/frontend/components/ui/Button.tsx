@@ -22,9 +22,9 @@ const Button = ({
   style = {},
 }: ButtonProps) => {
   const baseStyles: React.CSSProperties = {
-    padding: `${spacing.xs}px ${spacing.small}px`,
+    padding: `${spacing.xs} ${spacing.small}`,
     border: 'none',
-    borderRadius: `${radius.base}px`,
+    borderRadius: radius.base,
     fontSize: typography.fontSize.body,
     fontWeight: typography.fontWeight.medium,
     cursor: 'pointer',
@@ -38,12 +38,12 @@ const Button = ({
     },
     secondary: {
       backgroundColor: 'transparent',
-      border: `2px solid ${colors.text_secondary}`,
+      border: `0.125rem solid ${colors.text_secondary}`,
       color: colors.text_secondary,
     },
     outline: {
       backgroundColor: 'transparent',
-      border: `2px solid ${colors.accent}`,
+      border: `0.125rem solid ${colors.accent}`,
       color: colors.accent,
     },
   };

@@ -51,7 +51,7 @@ export default function AboutMe() {
         minHeight: '100vh',
         backgroundImage: 'url(/svg/background_vector.svg)',
         backgroundRepeat: 'repeat',
-        backgroundSize: '1145px 1062px',
+        backgroundSize: '71.563rem 66.375rem',
         backgroundPosition: '0 0',
         overflowX: 'hidden',
         width: '100%',
@@ -66,7 +66,7 @@ export default function AboutMe() {
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            columnGap: `${spacing.large}px`,
+            columngap: spacing.large,
             alignItems: 'center',
           }}
           className="introduction-grid"
@@ -74,17 +74,17 @@ export default function AboutMe() {
           <ImageBlock
             src="/images/me.jpg"
             alt="Portrait"
-            maxWidth="420px"
-            height="420px"
+            maxWidth="26.25rem"
+            height="26.25rem"
             objectFit="cover"
           />
 
-          <Card style={{ maxWidth: '480px' }}>
+          <Card style={{ maxWidth: '30rem' }}>
             <h3
               style={{
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.semibold,
-                marginBottom: `${spacing.small}px`,
+                marginBottom: spacing.small,
                 color: colors.text_primary,
               }}
             >
@@ -109,7 +109,7 @@ export default function AboutMe() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: `${spacing.small}px`,
+            gap: spacing.small,
             alignItems: 'stretch',
           }}
           className="curiosity-grid"
@@ -119,7 +119,7 @@ export default function AboutMe() {
               style={{
                 fontSize: typography.fontSize.h3,
                 fontWeight: typography.fontWeight.semibold,
-                marginBottom: `${spacing.small}px`,
+                marginBottom: spacing.small,
                 color: colors.text_primary,
               }}
             >

@@ -59,7 +59,7 @@ const WorksSection = ({ projects }: WorksSectionProps) => {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: `${spacing.large}px`,
+          gap: spacing.large,
         }}
         className="projects-list"
       >

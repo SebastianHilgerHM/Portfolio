@@ -177,7 +177,7 @@ const ContactSection = ({
                 {submitStatus === 'error' && (
                   <p
                     style={{
-                      fontSize: typography.fontSize.small,
+                      fontSize: typography.fontSize.body_small,
                       color: '#f44336',
                       marginBottom: spacing.xs,
                     }}
@@ -196,7 +196,7 @@ const ContactSection = ({
                 {submitStatus === 'loading' && (
                   <p
                     style={{
-                      fontSize: typography.fontSize.small,
+                      fontSize: typography.fontSize.body_small,
                       color: colors.text_secondary,
                       marginTop: spacing.xs,
                     }}

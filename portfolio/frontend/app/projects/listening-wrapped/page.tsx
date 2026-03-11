@@ -211,6 +211,7 @@ export default function ListeningWrappedProject() {
             </Card>
           </div>
         </div>
+      </SectionContainer>
 
       <SectionContainer paddingTop="xxlarge" paddingBottom="xxlarge">
         <ResponsiveGrid columns="1fr 1fr" gap="medium" alignItems="start" breakpoint={768}>

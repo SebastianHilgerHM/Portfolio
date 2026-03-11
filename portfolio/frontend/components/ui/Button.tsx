@@ -11,6 +11,7 @@ interface ButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary' | 'outline';
+  disabled?: boolean;
   style?: React.CSSProperties;
 }
 
@@ -19,6 +20,7 @@ const Button = ({
   onClick,
   type = 'button',
   variant = 'primary',
+  disabled = false,
   style = {},
 }: ButtonProps) => {
   const baseStyles: React.CSSProperties = {
@@ -54,11 +56,16 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={variantClass}
       style={{
         ...baseStyles,
         ...variantStyles[variant],
         ...style,
+        ...(disabled && {
+          opacity: 0.6,
+          cursor: 'not-allowed',
+        }),
       }}
     >
       {children}

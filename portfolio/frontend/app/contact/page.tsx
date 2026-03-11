@@ -180,7 +180,7 @@ export default function Contact() {
                   {submitStatus === 'error' && (
                     <p
                       style={{
-                        fontSize: typography.fontSize.small,
+                        fontSize: typography.fontSize.body_small,
                         color: '#E57373',
                         marginBottom: spacing.xs,
                       }}
@@ -199,7 +199,7 @@ export default function Contact() {
                   {submitStatus === 'loading' && (
                     <p
                       style={{
-                        fontSize: typography.fontSize.small,
+                        fontSize: typography.fontSize.body_small,
                         color: colors.text_secondary,
                         marginTop: spacing.xs,
                       }}

@@ -29,7 +29,12 @@ export default function ResumePage() {
     },
   ];
 
-  const workEntries = [
+  const workEntries: Array<{
+    dateRange: string;
+    title: string;
+    description: string;
+    image?: string;
+  }> = [
     {
       dateRange: 'Dec 2022 - Aug 2025',
       title: 'Therme Erding - Cashier',

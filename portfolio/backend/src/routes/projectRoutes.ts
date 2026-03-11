@@ -11,9 +11,6 @@ import { Router } from 'express';
 import {
   getAllProjects,
   getProjectById,
-  createProject,
-  updateProject,
-  deleteProject,
   getFeaturedProjects,
 } from '../controllers/projectController';
 
@@ -39,26 +36,5 @@ router.get('/featured', getFeaturedProjects);
  * @access  Public
  */
 router.get('/:id', getProjectById);
-
-/**
- * @route   POST /api/projects
- * @desc    Create a new project
- * @access  Public (should be protected in production)
- */
-router.post('/', createProject);
-
-/**
- * @route   PUT /api/projects/:id
- * @desc    Update a project by ID
- * @access  Public (should be protected in production)
- */
-router.put('/:id', updateProject);
-
-/**
- * @route   DELETE /api/projects/:id
- * @desc    Delete a project by ID
- * @access  Public (should be protected in production)
- */
-router.delete('/:id', deleteProject);
 
 export default router;

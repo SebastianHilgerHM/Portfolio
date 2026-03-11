@@ -31,7 +31,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
 // CORS configuration for frontend-backend communication
 app.use(cors({
   origin: [FRONTEND_URL, 'http://localhost:3000', 'http://127.0.0.1:3000'],
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+  methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));

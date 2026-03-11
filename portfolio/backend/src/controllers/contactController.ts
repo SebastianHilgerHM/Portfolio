@@ -11,6 +11,7 @@
 import { Request, Response } from 'express';
 import { Contact } from '../models';
 import mongoose from 'mongoose';
+import { sendContactFormEmail } from '../services/emailService';
 
 /**
  * Create a new contact submission
@@ -28,6 +29,17 @@ export const createContact = async (req: Request, res: Response): Promise<void> 
     });
 
     const savedContact = await contact.save();
+
+    // Send email notification
+    const recipientEmail = process.env.RECIPIENT_EMAIL || 'sebastianhilger9@gmail.com';
+    const emailSent = await sendContactFormEmail(
+      { name, email, message },
+      recipientEmail
+    );
+
+    if (!emailSent) {
+      console.warn('Contact saved to database but email notification failed');
+    }
 
     res.status(201).json({
       success: true,

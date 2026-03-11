@@ -26,7 +26,7 @@ const IntroductionSection = ({
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          columngap: spacing.large,
+          columnGap: spacing.large,
           alignItems: 'center',
         }}
         className="introduction-grid"

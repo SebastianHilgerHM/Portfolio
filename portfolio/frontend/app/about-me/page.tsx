@@ -97,7 +97,7 @@ export default function AboutMe() {
                 color: colors.text_secondary,
               }}
             >
-              Hello, my name is Sebastian and I am a 21 year old Student from Munich, Germany, currently enrolled at Munich University of Applied Sciences for a degree in Computer Science and Design.
+              Hello, my name is Sebastian and I am a 22 year old Student from Munich, Germany, currently enrolled at Munich University of Applied Sciences for a degree in Computer Science and Design.
             </p>
           </Card>
         </div>

@@ -81,21 +81,6 @@ export default function Home() {
               gap: spacing.medium,
             }}
           >
-            <div
-              style={{
-                display: 'inline-block',
-                padding: `${spacing.xs} ${spacing.small}`,
-                backgroundColor: colors.accent,
-                color: colors.background,
-                fontSize: typography.fontSize.body_small,
-                fontWeight: typography.fontWeight.bold,
-                letterSpacing: '0.125rem',
-                width: 'fit-content',
-                borderRadius: radius.base,
-              }}
-            >
-              PORTFOLIO
-            </div>
             
             <h1
               style={{
@@ -106,9 +91,9 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              Design meets
+              Welcome to my
               <br />
-              <span style={{ color: colors.accent }}>Development</span>
+              <span style={{ color: colors.accent }}>Portfolio</span>
             </h1>
             
             <p
@@ -119,8 +104,7 @@ export default function Home() {
                 maxWidth: '31.25rem',
               }}
             >
-              Crafting digital experiences that blend creative design with functional code. 
-              Exploring the intersection of aesthetics and technology.
+              My name is Sebastian Hilger, and I am a designer and developer based in Germany, currently studying Computer Science and Design at Munich University of Applied Sciences.
             </p>
 
             <div

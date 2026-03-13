@@ -104,7 +104,7 @@ export default function Home() {
                 maxWidth: '31.25rem',
               }}
             >
-              My name is Sebastian Hilger, and I am a designer and developer based in Germany, currently studying Computer Science and Design at Munich University of Applied Sciences.
+              My name is Sebastian, and I am a designer and developer based in Germany, currently studying Computer Science and Design at Munich University of Applied Sciences.
             </p>
 
             <div

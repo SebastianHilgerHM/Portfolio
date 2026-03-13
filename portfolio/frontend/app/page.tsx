@@ -99,7 +99,7 @@ export default function Home() {
             <p
               style={{
                 fontSize: typography.fontSize.h4,
-                color: colors.text_secondary,
+                color: colors.text_primary,
                 lineHeight: typography.lineHeight.normal,
                 maxWidth: '31.25rem',
               }}
